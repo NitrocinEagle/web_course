@@ -8,7 +8,7 @@ __pycache__/
 *.so
 
 # Python Virtualenv
-dashboard/venv
+venv
 
 # Distribution / packaging
 .Python

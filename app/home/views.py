@@ -22,7 +22,7 @@ class LoginFormView(FormView):
 class LogoutView(View):
     def get(self, request):
         logout(request)
-        return HttpResponseRedirect("/home")
+        return HttpResponseRedirect("/")
 
 
 class HomeView(View):

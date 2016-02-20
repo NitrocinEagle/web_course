@@ -9,6 +9,8 @@
 <body>
 <div class="container">
     <form class="form-signin" role="form">
+        {% csrf_token %}
+        {{ form.next }}
         <h2 class="form-signin-heading">Авторизация</h2>
         <input autofocus="autofocus" type="text" class="form-control" required="" placeholder="Имя пользователя" name="username">
         <input class="form-control" placeholder="Пароль" required=""
