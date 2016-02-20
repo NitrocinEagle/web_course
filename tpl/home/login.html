@@ -8,13 +8,12 @@
 </head>
 <body>
 <div class="container">
-    <form class="form-signin" role="form">
+    <form class="form-signin" action="" method="post">
         {% csrf_token %}
         {{ form.next }}
         <h2 class="form-signin-heading">Авторизация</h2>
         <input autofocus="autofocus" type="text" class="form-control" required="" placeholder="Имя пользователя" name="username">
-        <input class="form-control" placeholder="Пароль" required=""
-               type="password">
+        <input class="form-control" placeholder="Пароль" name="password" type="password" >
         <label class="checkbox">
             <input value="remember-me" type="checkbox"> Запомнить
         </label>
