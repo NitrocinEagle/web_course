@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% block head %}
+    {% block title %}
+        <title>Расписание</title>
+    {% endblock %}
+    {% block load_static %}
+        {{ block.super }}
+    {% endblock %}
+{% endblock %}
+{% block body %}
+    {% block menu %}
+        {{ block.super }}
+    {% endblock %}
+    {% block content %}
+        <div class="container" style="margin-top:50px">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    <ol class="breadcrumb">
+                        <li><a href="/home">Главная</a></li>
+                        <li class="active">Расписание</li>
+                    </ol>
+                    {% include 'timetable/timetable.html' %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block footer %}
+        {{ block.super }}
+    {% endblock %}
+{% endblock %}

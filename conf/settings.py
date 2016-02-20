@@ -105,6 +105,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "app/static")
 STATICFILES_DIRS = (
     os.path.join(STATIC_ROOT, "home"),
     os.path.join(STATIC_ROOT, "assets"),
+    os.path.join(STATIC_ROOT, "timetable"),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
