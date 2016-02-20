@@ -1,0 +1,44 @@
+<!DOCTYPE html lang="en">
+{% block head %}
+    <head>
+        <meta charset="utf-8">
+        {% block title %}{% endblock %}
+
+        {% block load_static %}
+            {% include 'base/statics.html' %}
+        {% endblock %}
+    </head>
+{% endblock %}
+
+{% block body %}
+    <body>
+    {% block menu %}
+        {% include 'base/menu.html' %}
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+        {% include 'base/footer.html' %}
+    {% endblock %}
+    </body>
+{% endblock %}
+</html>
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Homepage</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+
+    </div>
+
+
+</div>
+</body>
+</html>
