@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -12,5 +13,5 @@ class UserProfile(models.Model):
     date_joined = models.DateField()
     about = models.TextField(blank=True)
 
-    def __str__(self):
-        return '%s' % self.name
+    def __unicode__(self):
+        return u'%s' % self.name

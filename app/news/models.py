@@ -6,5 +6,5 @@ class News(models.Model):
     announce = models.TextField()
     text = models.TextField()
 
-    def __str__(self):
-        return '%s. %s' % (self.id, self.topic)
+    def __unicode__(self):
+        return u'%s. %s' % (self.id, self.topic)
