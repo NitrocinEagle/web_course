@@ -17,3 +17,6 @@ class UserProfileView(TemplateView):
 
 class UserTasksView(TemplateView):
     template_name = 'user/tasks.html'
+
+class AchievmentsView(TemplateView):
+    template_name = 'user/achievments.html'
