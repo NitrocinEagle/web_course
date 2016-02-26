@@ -11,3 +11,6 @@ class UserProfile(models.Model):
     email = models.EmailField(blank=True)
     date_joined = models.DateField()
     about = models.TextField(blank=True)
+
+    def __str__(self):
+        return '%s' % self.name
