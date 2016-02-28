@@ -1,4 +1,5 @@
 Версия Python: 2.7
+Версия Virtualenv: 2.7
 
 1. Клонируем репозиторий `git clone https://github.com/pc-mist/web_course.git`
 2. Переходим в директорию web_course `cd web_course`
