@@ -2,9 +2,10 @@
 from django.contrib.auth import login, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.views.generic import FormView
+from django.views.generic import FormView, ListView
 from django.views.generic.base import View
 from django.contrib.auth.forms import AuthenticationForm
+from app.news.models import News
 
 
 class LoginFormView(FormView):
@@ -25,8 +26,9 @@ class LogoutView(View):
         return HttpResponseRedirect("/home")
 
 
-class HomeView(View):
+class HomeView(ListView):
     template_name = 'home/home.html'
+    context_object_name = 'news'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+    def get_queryset(self):
+        return News.objects.all()[len(News.objects.all())-2:]

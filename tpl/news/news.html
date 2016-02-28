@@ -1,5 +1,5 @@
 <h2>Новости</h2>
-<div class="row">
+<!-- <div class="row">
     <h3>Сайт для курсов</h3>
     <p>Создан сайт для курса</p>
 </div>
@@ -16,3 +16,13 @@
     <h3>Группа ВКонтакте</h3>
     <p>Создана группа <a href="http://vk.com/club112700102">ВКонтакте</a></p>
 </div>
+-->
+
+{% for topic in news %}
+    <div class="row">
+        <h3>{{ topic.topic|safe }}</h3>
+        <h4>{{ topic.announce|safe }}</h4>
+        <p>{{ topic.text|safe }}</p>
+    </div>
+    <hr>
+{% endfor %}

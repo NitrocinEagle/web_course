@@ -20,7 +20,14 @@
                         details»</a></p>
                 </div>
                 <div class="col-lg-4">
-                    {% include 'news/news.html' %}
+                    <h2>Новости</h2>
+                    {% for topic in news %}
+                        <div class="row">
+                            <h4>{{ topic.topic|safe }}</h4>
+                            <p>{{ topic.announce|safe }}</p>
+                        </div>
+                        <hr>
+                    {% endfor %}
                     <p><a class="btn btn-primary" href="/news" role="button">View details»</a></p>
                 </div>
                 <div class="col-lg-3">
