@@ -69,3 +69,6 @@ db.sqlite3
 
 #media files
 media
+
+#static files
+app/static
