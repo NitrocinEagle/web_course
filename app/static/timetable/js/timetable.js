@@ -1,11 +1,5 @@
 $(document).ready(function () {
     $('#calendar').fullCalendar({
-        events: [
-            {
-                title: 'Лекция',
-                start: '2016-03-01T17:40:00',
-            },
-        ],
         eventSources: [{
             url: '/timetable/api/get_events',
             type: 'GET',
