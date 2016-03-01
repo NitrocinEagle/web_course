@@ -1,2 +1,14 @@
 {% load static %}
 <img src="{% static 'img/timetable.jpg' %}">
+<link href="{% static 'fullcalendar/fullcalendar.min.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<link href="{% static 'fullcalendar/fullcalendar.print.css' %}" rel="stylesheet" type="text/css" media="print"/>
+<link href="{% static 'css/timetable.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'jquery-ui-1.8.11.custom/jquery-ui-1.8.11.custom.css' %}" rel="stylesheet" type="text/css" media="print"/>
+<link href="{% static 'jquery-ui-1.8.11.custom/jquery-ui-1.8.11.custom.min.js' %}" rel="stylesheet" type="text/css" media="all"/>
+<link href="{% static 'jquery-ui-1.8.11.custom/jquery-ui-timepicker-addon.js' %}" rel="stylesheet" type="text/css" media="all"/>
+<script src="{% static 'moment/moment.min.js' %}"></script>
+<script src="{% static 'fullcalendar/fullcalendar.min.js' %}"></script>
+<script src="{% static 'js/timetable.js' %}"></script>
+<br>
+<div id="calendar"></div>
+

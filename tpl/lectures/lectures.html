@@ -12,7 +12,7 @@
             <div id="collapse_{{ forloop.counter }}"
                  class="panel-collapse collapse">
                 <div class="panel-body">
-                    {{ lecture.about }}
+                    {{ lecture.about|safe }}
                 </div>
             </div>
         </div>
