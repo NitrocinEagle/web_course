@@ -31,4 +31,4 @@ class HomeView(ListView):
     news_view_count = 2
 
     def get_queryset(self):
-        return News.objects.all()[News.objects.count() - self.news_view_count:]
+        return News.objects.all()[:self.news_view_count]
