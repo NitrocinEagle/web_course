@@ -23,3 +23,10 @@ class AchievmentsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         return get_cntxt_data(self, **kwargs)
+
+
+class UserSettingsView(TemplateView):
+    template_name = 'user/settings.html'
+
+    def get_context_data(self, **kwargs):
+        return get_cntxt_data(self, **kwargs)

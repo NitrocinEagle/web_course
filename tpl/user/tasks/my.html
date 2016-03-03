@@ -17,9 +17,9 @@
             <h3>Задание {{ forloop.counter }}:</h3>
             Название: {{ task.title }}<br>
             Описание: {{ task.description }}<br>
-            Файл: {{ task.task_file }}<br>
-            task_id:{{ task.id }}<br>
-            user_id:{{ user.id }}<br>
+            <div style="display: none">Файл: {{ task.task_file }}<br>
+             task_id:{{ task.id }}<br>
+            user_id:{{ user.id }}<br></div>
         {% endfor %}
     </div>
 {% endblock %}
