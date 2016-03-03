@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'user/base.html' %}
+{% block title %}
     <title>Достижения</title>
-</head>
-<body>
-Тут когда-нибудь будут ачивки.
-</body>
-</html>
+{% endblock %}
+{% block breadcumb %}
+    <ol class="breadcrumb">
+        <li><a href="/home">Главная</a></li>
+        <li><a href="/user">Пользователь {{ user }}</a></li>
+        <li class="active">Достижения</li>
+    </ol>
+{% endblock %}
+{% block user_achievments %}
+    <li class="active"><a href="/user/achievments/"><i class="glyphicon glyphicon-star-empty"></i>Достижения </a>
+    </li>
+{% endblock %}
+{% block profile_menu_content %}
+    тут будут ачивки
+{% endblock %}

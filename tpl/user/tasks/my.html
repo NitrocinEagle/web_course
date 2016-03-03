@@ -1,0 +1,28 @@
+{% extends 'user/base.html' %}
+{% block title %}
+    <title>Мои задания</title>
+{% endblock %}
+{% block breadcumb %}
+    <ol class="breadcrumb">
+        <li><a href="/home">Главная</a></li>
+        <li><a href="/user">Пользователь {{ user }}</a></li>
+        <li><a href="/user/tasks">Задания</a></li>
+        <li class="active">Мои задания</li>
+    </ol>
+{% endblock %}
+{% block profile_menu_content %}
+    <div class="container" style="margin-top: 51px;">
+        Задания, которые нужно выполнить:<br>
+        {% for task in my_tasks %}
+            <h3>Задание {{ forloop.counter }}:</h3>
+            Название: {{ task.title }}<br>
+            Описание: {{ task.description }}<br>
+            Файл: {{ task.task_file }}<br>
+            task_id:{{ task.id }}<br>
+            user_id:{{ user.id }}<br>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+

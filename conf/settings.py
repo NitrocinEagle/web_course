@@ -3,12 +3,9 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$1r=+^b9$pj1q05lc92d*-%%7q-lcu#+&94n5v40wejpkvm2ox'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-# Application definition
 
 INSTALLED_APPS = (
     'app.user',
@@ -57,17 +54,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'app.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_ROOT, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -87,7 +79,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -101,8 +92,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "app/static")
@@ -111,12 +100,16 @@ STATICFILES_DIRS = (
     os.path.join(STATIC_ROOT, "home"),
     os.path.join(STATIC_ROOT, "assets"),
     os.path.join(STATIC_ROOT, "timetable"),
+    os.path.join(STATIC_ROOT, "user"),
 )
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+
 MEDIA_URL = '/media/'
