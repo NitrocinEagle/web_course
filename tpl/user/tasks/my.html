@@ -11,17 +11,15 @@
     </ol>
 {% endblock %}
 {% block profile_menu_content %}
-    <div class="container" style="margin-top: 51px;">
-        Задания, которые нужно выполнить:<br>
-        {% for task in my_tasks %}
-            <h3>Задание {{ forloop.counter }}:</h3>
-            Название: {{ task.title }}<br>
-            Описание: {{ task.description }}<br>
-            <div style="display: none">Файл: {{ task.task_file }}<br>
-             task_id:{{ task.id }}<br>
+    Задания, которые нужно выполнить:<br>
+    {% for task in my_tasks %}
+        <h3>Задание {{ forloop.counter }}:</h3>
+        Название: {{ task.title }}<br>
+        Описание: {{ task.description }}<br>
+        <div style="display: none">Файл: {{ task.task_file }}<br>
+            task_id:{{ task.id }}<br>
             user_id:{{ user.id }}<br></div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 {% endblock %}
 
 

@@ -11,12 +11,10 @@
     </ol>
 {% endblock %}
 {% block profile_menu_content %}
-    <div class="container" style="margin-top: 51px;">
-        {% for task in all_tasks %}
-            <p><b>{{ task.title }}:</b><br>
-                {{ task.description|safe }}<br></p>
-        {% endfor %}
-    </div>
+    {% for task in all_tasks %}
+        <p><b>{{ task.title }}:</b><br>
+            {{ task.description|safe }}<br></p>
+    {% endfor %}
 {% endblock %}
 
 
