@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 from django.views.generic import TemplateView, ListView
-from models import Task, UserTask
+from models import Task
 from app.user.views import get_cntxt_data
 
 
@@ -27,7 +27,8 @@ class MyTasksView(ListView):
     context_object_name = "my_tasks"
 
     def get_queryset(self):
-        return UserTask.objects.get(assigned_to=self.request.user).tasks.all()
+        #return UserTask.objects.get(assigned_to=self.request.user).tasks.all()
+        return []
 
     def get_context_data(self, **kwargs):
         return get_cntxt_data(self, **kwargs)
