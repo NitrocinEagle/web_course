@@ -1,0 +1,23 @@
+{% extends 'user/base.html' %}
+{% block title %}
+    <title>Задания</title>
+{% endblock %}
+{% block breadcumb %}
+    <ol class="breadcrumb">
+        <li><a href="/home">Главная</a></li>
+        <li><a href="/user">Пользователь {{ user }}</a></li>
+        <li><a href="/user/tasks">Задания</a></li>
+        <li class="active">Прислать ответ на задание</li>
+    </ol>
+{% endblock %}
+{% block user_tasks %}
+    <li class="active"><a href="/user/tasks/"><i
+            class="glyphicon glyphicon-ok"></i>Задания </a></li>
+{% endblock %}
+{% block profile_menu_content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Create"/>
+    </form>
+{% endblock %}

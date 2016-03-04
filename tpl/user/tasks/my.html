@@ -13,7 +13,7 @@
 {% block profile_menu_content %}
     Задания, которые нужно выполнить:<br>
     {% for task in my_tasks %}
-        <h3>Задание {{ forloop.counter }}:</h3>
+        <h3><a href="/user/tasks/send_task/{{ task.id }}/{{ user.id }}/">Задание {{ forloop.counter }}:</a></h3>
         Название: {{ task.title }}<br>
         Описание: {{ task.description|safe }}<br>
         <div style="display: none">Файл: {{ task.task_file }}<br>
