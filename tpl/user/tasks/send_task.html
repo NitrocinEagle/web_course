@@ -15,9 +15,18 @@
             class="glyphicon glyphicon-ok"></i>Задания </a></li>
 {% endblock %}
 {% block profile_menu_content %}
-    <form action="" method="post">
+    Задание: {{ task.title }}<br>
+    Описание: {{ task.description|safe }}<br>
+    answer.answer_file {{ answer.answer_file }}<br>
+    {% if answer.answer_file %}
+        Вы уже отправили ответ на это задание
+    {% else %}
+        Вы ещё не отправили ответ на задание
+    {% endif %}
+
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Create"/>
+        <input type="submit" value="Отправить ответ"/>
     </form>
 {% endblock %}
