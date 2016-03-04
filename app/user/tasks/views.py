@@ -47,7 +47,15 @@ class SendTaskFormView(FormView):
     success_url = '/user/tasks/'
 
     def form_valid(self, form):
-        answer_file = form.cleaned_data['answer_file']
+        answer_file = form.cleaned_data.get('answer_file')
+        data_format = form.cleaned_data.get('data_format')
+
+        response = {
+            'result': u'success',
+            'message': u'success',
+        }
+        return (response)
+
         print answer_file
         return super(SendTaskFormView, self).form_valid(form)
 
@@ -55,3 +63,10 @@ class SendTaskFormView(FormView):
         kwargs['user_id'] = self.kwargs.get('user_id')
         kwargs['task_id'] = self.kwargs.get('task_id')
         return get_cntxt_data(self, **kwargs)
+
+    def form_invalid(self, form):
+        response = {
+            'result': u'error',
+            'errors': "error"
+        }
+        return response
