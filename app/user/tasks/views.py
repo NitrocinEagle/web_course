@@ -105,8 +105,6 @@ class SendTaskFormView(UserViewBase, FormView):
         return super(SendTaskFormView, self).form_invalid(form)
 
     def get_context_data(self, *args, **kwargs):
-        kwargs['user_id'] = self.kwargs.get('user_id')
-        kwargs['task_id'] = self.kwargs.get('task_id')
         kwargs['task'] = Task.objects.get(id=kwargs.get('task_id'))
         try:
             kwargs['answer'] = TaskAnswer.objects.get(
