@@ -1,6 +1,8 @@
 # -*- coding: utf8 -*-
+import os
 from django.views.generic import ListView, FormView
 from django.contrib import messages
+from django.core.exceptions import ValidationError
 from app.user.views import UserViewBase, UserProfile
 from models import Task, TaskAnswer
 from forms import NameForm
@@ -41,30 +43,51 @@ class CompletedTasksView(UserViewBase):
 class SendTaskFormView(UserViewBase, FormView):
     template_name = "user/tasks/send_task.html"
     form_class = NameForm
+    valid_formats = [".jpg", ".rar", ".zip", ".txt", ".png", ".jpeg"]
+    msg = {
+        'upload': u"Файл с ответом был успешно загружен!",
+        'update': u"Загрузили новый файл с ответом.",
+        'over_size': u"Максимальный размер файла - 10 Mb.",
+        'invalid_format': u"Неверный формат файла."
+    }
+    max_upload_size = 10485760  # 10 Mb
 
     def get_success_url(self):
         return "/user/tasks/send_task/%s/%s" % (
             self.kwargs.get('task_id'), self.kwargs.get('user_id'))
 
     def form_valid(self, form):
+        task = Task.objects.get(id=self.kwargs.get('task_id'))
+        answer_file = self.request.FILES.get('answer_file')
+        user = self.request.user
+
+        ext = os.path.splitext(answer_file.name)[1]
+        if not ext in self.valid_formats:
+            messages.add_message(self.request, messages.WARNING,
+                                 self.msg['invalid_format'])
+            return super(SendTaskFormView, self).form_valid(form)
+
+        answer_file_size = answer_file.size
+        if answer_file_size > self.max_upload_size:
+            messages.add_message(self.request, messages.WARNING,
+                                 self.msg['over_size'])
+            return super(SendTaskFormView, self).form_valid(form)
+
         try:
-            answer = TaskAnswer.objects.get(
-                task=Task.objects.get(id=self.kwargs['task_id']),
-                user=self.request.user
-            )
-            answer.answer_file = self.request.FILES['answer_file']
+            answer = TaskAnswer.objects.get(task=task, user=self.request.user)
+            answer.answer_file = answer_file
             answer.save()
             messages.add_message(self.request, messages.INFO,
-                                 u'Загрузили новый файл с ответом, удалив старый.')
+                                 self.msg['update'])
         except:
             answer = TaskAnswer(
-                answer_file=self.request.FILES['answer_file'],
-                task=Task.objects.get(id=self.kwargs['task_id']),
-                user=self.request.user
+                answer_file=answer_file,
+                task=task,
+                user=user
             )
             answer.save()
             messages.add_message(self.request, messages.SUCCESS,
-                                 u'Файл с ответом был успешно загружен!')
+                                 self.msg['upload'])
         return super(SendTaskFormView, self).form_valid(form)
 
     def form_invalid(self, form):
@@ -76,11 +99,11 @@ class SendTaskFormView(UserViewBase, FormView):
     def get_context_data(self, *args, **kwargs):
         kwargs['user_id'] = self.kwargs.get('user_id')
         kwargs['task_id'] = self.kwargs.get('task_id')
-        kwargs['task'] = Task.objects.get(id=kwargs['task_id'])
+        kwargs['task'] = Task.objects.get(id=kwargs.get('task_id'))
         try:
             kwargs['answer'] = TaskAnswer.objects.get(
-                user_id=kwargs['user_id'],
-                task_id=kwargs['task_id']
+                user_id=kwargs.get('user_id'),
+                task_id=kwargs.get('task_id')
             )
         except:
             pass

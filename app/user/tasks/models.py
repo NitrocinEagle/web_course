@@ -23,7 +23,7 @@ class TaskAnswer(models.Model):
     task = models.ForeignKey(Task, unique=False)
     user = models.ForeignKey(User, unique=False)
     answer_file = models.FileField(blank=True, null=True,
-                                   upload_to="tasks/solutions/" + str(User))
+                                   upload_to="tasks/solutions/")
     mark = models.PositiveSmallIntegerField(blank=True, null=True)
 
     def __unicode__(self):
