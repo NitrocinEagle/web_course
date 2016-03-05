@@ -1,5 +1,6 @@
 # -*- coding: utf8 -*-
 from django.views.generic import ListView, FormView
+from django.contrib import messages
 from app.user.views import UserViewBase, UserProfile
 from models import Task, TaskAnswer
 from forms import NameForm
@@ -34,32 +35,53 @@ class MyTasksView(ListView):
 
 
 class CompletedTasksView(UserViewBase):
-    template_name = 'user/tasks/completed.html'
+    template_name = "user/tasks/completed.html"
 
 
 class SendTaskFormView(UserViewBase, FormView):
-    template_name = 'user/tasks/send_task.html'
+    template_name = "user/tasks/send_task.html"
     form_class = NameForm
-    success_url = '/user/tasks/'
+
+    def get_success_url(self):
+        return "/user/tasks/send_task/%s/%s" % (
+            self.kwargs.get('task_id'), self.kwargs.get('user_id'))
 
     def form_valid(self, form):
-        answer = TaskAnswer(
-            answer_file=self.request.FILES['answer_file'],
-            task=Task.objects.get(id=self.kwargs['task_id']),
-            user=self.request.user
-        )
-        answer.save()
+        try:
+            answer = TaskAnswer.objects.get(
+                task=Task.objects.get(id=self.kwargs['task_id']),
+                user=self.request.user
+            )
+            answer.answer_file = self.request.FILES['answer_file']
+            answer.save()
+            messages.add_message(self.request, messages.INFO,
+                                 u'Загрузили новый файл с ответом, удалив старый.')
+        except:
+            answer = TaskAnswer(
+                answer_file=self.request.FILES['answer_file'],
+                task=Task.objects.get(id=self.kwargs['task_id']),
+                user=self.request.user
+            )
+            answer.save()
+            messages.add_message(self.request, messages.SUCCESS,
+                                 u'Файл с ответом был успешно загружен!')
         return super(SendTaskFormView, self).form_valid(form)
+
+    def form_invalid(self, form):
+        if not self.request.FILES.get('answer_file', None):
+            messages.add_message(self.request, messages.WARNING,
+                                 u'Загрузите файл с ответом!')
+        return super(SendTaskFormView, self).form_invalid(form)
 
     def get_context_data(self, *args, **kwargs):
         kwargs['user_id'] = self.kwargs.get('user_id')
         kwargs['task_id'] = self.kwargs.get('task_id')
+        kwargs['task'] = Task.objects.get(id=kwargs['task_id'])
         try:
             kwargs['answer'] = TaskAnswer.objects.get(
                 user_id=kwargs['user_id'],
                 task_id=kwargs['task_id']
             )
         except:
-            kwargs['answer'] = {}
-        print 'answer_file: ', kwargs['answer']
+            pass
         return super(SendTaskFormView, self).get_context_data(**kwargs)

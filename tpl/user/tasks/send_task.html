@@ -2,6 +2,11 @@
 {% block title %}
     <title>Задания</title>
 {% endblock %}
+{% block load_static %}
+    {{ block.super }}
+    {% load static %}
+    <script src="{% static 'js/tasks.js' %}"></script>
+{% endblock %}
 {% block breadcumb %}
     <ol class="breadcrumb">
         <li><a href="/home">Главная</a></li>
@@ -15,18 +20,44 @@
             class="glyphicon glyphicon-ok"></i>Задания </a></li>
 {% endblock %}
 {% block profile_menu_content %}
-    Задание: {{ task.title }}<br>
-    Описание: {{ task.description|safe }}<br>
-    answer.answer_file {{ answer.answer_file }}<br>
+    <b>Задание:</b> {{ task.title }}<br>
+    <b>Описание:</b> {{ task.description|safe }}<br><br>
     {% if answer.answer_file %}
-        Вы уже отправили ответ на это задание
+        Вы уже отправили ответ на это задание:
+        <a href="{{ answer.answer_file.url }}"><u>ответ</u></a><br>
+        Ваша оценка:
+        {% if answer.mark == None %}
+            Не оценено
+        {% else %}
+            {{ answer.mark }}/100
+        {% endif %}
     {% else %}
         Вы ещё не отправили ответ на задание
     {% endif %}
+    <br><br>
+    {% if answer.mark == None %}
+        {% if answer.answer_file %}
+            <a id="send_another_file">Хочу отправить другой ответ на задание</a>
+            <br>
+        {% endif %}
+        <div id="send_task_form" style="display:{% if answer.answer_file %}none">{% else %}block">{% endif %}
+             <form action="" method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                 <label for="id_answer_file">Файл с ответом на задание:</label>
+                 <input id="id_answer_file" name="answer_file" type="file"><br>
+                 {{ form.next }}
+                 <input type="submit" class="btn btn-success" value="Отправить"/>
+             </form>
+        </div>
+    {% endif %}
 
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Отправить ответ"/>
-    </form>
+    {% if messages %}
+        <div id="messages" style="text-decoration-line: none">
+            {% for msg in messages %}
+                    <div class="alert alert-{{ msg.level_tag }}" role="alert">
+                        {{ msg.message }}
+                    </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}

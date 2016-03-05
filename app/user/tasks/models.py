@@ -20,8 +20,11 @@ class Task(models.Model):
 
 
 class TaskAnswer(models.Model):
-    task = models.OneToOneField(Task)
-    user = models.OneToOneField(User)
+    task = models.ForeignKey(Task, unique=False)
+    user = models.ForeignKey(User, unique=False)
     answer_file = models.FileField(blank=True, null=True,
                                    upload_to="tasks/solutions/" + str(User))
     mark = models.PositiveSmallIntegerField(blank=True, null=True)
+
+    def __unicode__(self):
+        return u'Ответ на задание %s от %s' % (self.task_id, self.user)
