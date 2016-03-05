@@ -48,7 +48,10 @@ class SendTaskFormView(UserViewBase, FormView):
         'upload': u"Файл с ответом был успешно загружен!",
         'update': u"Загрузили новый файл с ответом.",
         'over_size': u"Максимальный размер файла - 10 Mb.",
-        'invalid_format': u"Неверный формат файла."
+        'invalid_format': u"Неверный формат файла.",
+        'file_not_load': u"Вы забыли загрузить файл.",
+        'empty': u"Файл пустой."
+
     }
     max_upload_size = 10485760  # 10 Mb
 
@@ -91,9 +94,14 @@ class SendTaskFormView(UserViewBase, FormView):
         return super(SendTaskFormView, self).form_valid(form)
 
     def form_invalid(self, form):
-        if not self.request.FILES.get('answer_file', None):
+        answer_file = self.request.FILES.get('answer_file', None)
+        if not answer_file:
             messages.add_message(self.request, messages.WARNING,
-                                 u'Загрузите файл с ответом!')
+                                 self.msg['file_not_load'])
+        else:
+            if answer_file.size is 0:
+                messages.add_message(self.request, messages.WARNING,
+                                     self.msg['empty'])
         return super(SendTaskFormView, self).form_invalid(form)
 
     def get_context_data(self, *args, **kwargs):

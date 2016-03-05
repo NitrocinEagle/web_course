@@ -27,4 +27,6 @@ class TaskAnswer(models.Model):
     mark = models.PositiveSmallIntegerField(blank=True, null=True)
 
     def __unicode__(self):
-        return u'Ответ на задание %s от %s' % (self.task_id, self.user)
+        if self.mark is None:
+            return u'Ответ на задание %s от %s' % (self.task_id, self.user)
+        return u'Ответ на задание %s от %s. [%s/100]' % (self.task_id, self.user, self.mark)
