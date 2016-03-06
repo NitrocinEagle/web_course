@@ -2,7 +2,6 @@
 import os
 from django.views.generic import ListView, FormView
 from django.contrib import messages
-from django.core.exceptions import ValidationError
 from app.user.views import UserViewBase, UserProfile
 from models import Task, TaskAnswer
 from forms import NameForm
@@ -43,7 +42,7 @@ class CompletedTasksView(UserViewBase):
 class SendTaskFormView(UserViewBase, FormView):
     template_name = "user/tasks/send_task.html"
     form_class = NameForm
-    valid_formats = [".jpg", ".rar", ".zip", ".txt", ".png", ".jpeg"]
+    valid_formats = [".jpg", ".png", ".jpeg", ".rar", ".zip", ".txt"]
     msg = {
         'upload': u"Файл с ответом был успешно загружен!",
         'update': u"Загрузили новый файл с ответом.",
@@ -51,7 +50,6 @@ class SendTaskFormView(UserViewBase, FormView):
         'invalid_format': u"Неверный формат файла.",
         'file_not_load': u"Вы забыли загрузить файл.",
         'empty': u"Файл пустой."
-
     }
     max_upload_size = 10485760  # 10 Mb
 
