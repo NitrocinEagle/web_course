@@ -13,6 +13,10 @@
                  class="panel-collapse collapse">
                 <div class="panel-body">
                     {{ lecture.about|safe }}
+                    {% if user.username == 'admin' %}
+                        <br>
+                        <a href="/lectures/lesson/{{ forloop.counter }}">Текст лекции</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

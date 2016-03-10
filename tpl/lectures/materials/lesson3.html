@@ -1,0 +1,421 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    <title>Лекция 3</title>
+{% endblock %}
+{% block load_static %}
+    {{ block.super }}
+    {% load static %}
+    <link href="{% static 'css/lectures.css' %}" rel="stylesheet" type="text/css" media="all"/>
+{% endblock %}
+{% block content %}
+    <div class="container" style="margin-top:50px">
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <ol class="breadcrumb">
+                    <li><a href="/home">Главная</a></li>
+                    <li><a href="/lectures">Лекции</a></li>
+                    <li class="active">Лекция 3</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1>Лекция 3</h1>
+                    <h3>Bootstrap(продолжение). JavaScript(начало).</h3>
+                </div>
+                <h1>План лекции</h1>
+                <ol>
+                    <li>Рассмотреть некоторые возможности Bootstrap;</li>
+                    <li>JavaScript. Возможности и базовый синктасис;</li>
+                    <li>Рассмотреть JS-плагины Bootstrap.</li>
+                </ol>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <h1>На что ещё способен bootstrap?</h1>
+        <div class="row">
+            <div class="example" style="height: 250px">
+                <div class="col-lg-5 code-col">
+                    <h3>Заголовки различных уровней</h3>
+                    <p>
+                        &lth1&gth1. Заголовок 1&lt/h1&gt<br>
+                        &lth2&gth2. Заголовок 2&lt/h2&gt<br>
+                        &lth3&gth3. Заголовок 3&lt/h3&gt<br>
+                        &lth4&gth4. Заголовок 4&lt/h4&gt<br>
+                        &lth5&gth5. Заголовок 5&lt/h5&gt<br>
+                        &lth6&gth6. Заголовок 6&lt/h6&gt
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <h1>h1. Заголовок 1</h1>
+                    <h2>h2. Заголовок 2</h2>
+                    <h3>h3. Заголовок 3</h3>
+                    <h4>h4. Заголовок 4</h4>
+                    <h5>h5. Заголовок 5</h5>
+                    <h6>h6. Заголовок 6</h6>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Оформление текста</h3>
+                    <p>
+                        &lthsmall&gtУменьшенный&lth/small&gt<br>
+                        &ltstrong&gtПолужирный&lt/strong&gt<br>
+                        &ltem&gtЭто чья-то речь&lt/em&gt<br>
+                        &ltp class="text-muted"&gtmutted&lt/p&gt<br>
+                        &ltp class="text-warning"&gtwarning&lt/p&gt<br>
+                        &ltp class="text-error"&gterror&lt/p&gt<br>
+                        &ltp class="text-info"&gtinfo&lt/p&gt<br>
+                        &ltp class="text-success"&gtsuccess&lt/p&gt<br>
+                        &ltabbr title="Институт Космических и Информационных Технологий"&gtИКИТ&lt/abbr&gt
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <small>Уменьшенный</small>
+                    <br>
+                    <strong>Полужирный</strong><br>
+                    <em>Это чья-то речь</em><br>
+                    <p class="text-muted">mutted</p>
+                    <p class="text-warning">warning</p>
+                    <p class="text-error">error</p>
+                    <p class="text-info">info</p>
+                    <p class="text-success">success</p>
+                    <abbr title="Институт Космических и Информационных Технологий">ИКИТ</abbr>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 210px">
+                <div class="col-lg-5 code-col">
+                    <h3>Горизонтальные списки описания</h3>
+                    <p>
+                        &ltdl class="dl-horizontal"><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин 1&lt/dt&gt&ltdd&gtОпределение 1&lt/dd&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин 2&lt/dt&gt&ltdd&gtДлинное пределение 2&lt/dd&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин 3&lt/dt&gt&ltdd&gtОчень-...-очень длинное определение
+                        3&lt/dd&gt <br>
+                        &lt/dl>
+                    </p>
+
+                </div>
+                <div class="col-lg-7 example-col">
+                    <dl class="dl-horizontal">
+                        <dt>Термин 1</dt>
+                        <dd>Определение 1</dd>
+                        <dt>Термин 2</dt>
+                        <dd>Длинное пределение 2</dd>
+                        <dt>Термин 3</dt>
+                        <dd>Очень-очень-очень-
+                            очень-очень-очень-очень-
+                            очень-очень длинное определение 3
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Горизонтальные списки описания</h3>
+                    <p>
+                        &ltblockquote class="pull-right"&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&ltp&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я
+                        вас молю – утешьтесь, государь!&ltbr&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Спасенью
+                        радоваться надо больше,&ltbr&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Чем горевать
+                        о тягостных утратах.<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt/p&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&ltsmall&gtШекспир
+                        Уильям - &ltcite title="Буря"&gtБуря&lt/cite&gt&lt/small&gt<br>&lt/blockquote&gt
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <blockquote class="pull-right">
+                        <p>
+                            Я вас молю – утешьтесь, государь!<br>
+                            Спасенью радоваться надо больше,<br>
+                            Чем горевать о тягостных утратах.
+                        </p>
+                        <small>Шекспир Уильям - <cite title="Буря">Буря</cite></small>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Таблицы</h3>
+                    <p>
+                        &lttable class="table table-hover table-striped table-bordered table-condensed"&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="success"&gt&lt/tr&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="danger"&gt&lt/tr&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="warning"&gt&lt/tr&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="info"&gt&lt/tr&gt<br>
+                        &lt/table&gt
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <table class="table table-hover table-striped table-bordered table-condensed">
+                        <thead>
+                        <tr class="success">
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="danger">
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr class="warning">
+                            <td>2</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr class="info">
+                            <td>3</td>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Формы. Линейная форма.</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <br>
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputEmail2">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputPassword2">Пароль</label>
+                            <input type="password" class="form-control" id="exampleInputPassword2"
+                                   placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Запомнить меня
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 700px">
+                <div class="col-lg-5 code-col">
+                    <h3>Формы. Поддерживаемые элементы форм</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Пароль</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" id="exampleInputFile">
+                            <p class="help-block">Example block-level help text here.</p>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Проверить меня
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Отправить</button>
+                        <br><br>
+                        <label>
+                            Выбор
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Формы. Отключенные наборы полей.</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <form role="form">
+                        <fieldset disabled>
+                            <div class="form-group">
+                                <label for="disabledTextInput">Неактивный ввод</label>
+                                <input type="text" id="disabledTextInput" class="form-control"
+                                       placeholder="Disabled input">
+                            </div>
+                            <div class="form-group">
+                                <label for="disabledSelect">Неактивный select menu</label>
+                                <select id="disabledSelect" class="form-control">
+                                    <option>Disabled select</option>
+                                </select>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Не могу проверить это
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Формы. Проверка на ошибки</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <div class="form-group has-success has-feedback">
+                        <label class="control-label" for="inputSuccess2">Успешный ввод</label>
+                        <input type="text" class="form-control" id="inputSuccess2">
+                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-warning has-feedback">
+                        <label class="control-label" for="inputWarning2">Ввод с предупреждением</label>
+                        <input type="text" class="form-control" id="inputWarning2">
+                        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-error has-feedback">
+                        <label class="control-label" for="inputError2">Ввод с ошибкой</label>
+                        <input type="text" class="form-control" id="inputError2">
+                        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Кнопки</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <button type="button" class="btn btn-default">Default</button>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-success">Success</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                    <button type="button" class="btn btn-warning">Warning</button>
+                    <button type="button" class="btn btn-danger">Danger</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Кнопки. Размеры.</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <p>
+                        <button type="button" class="btn btn-primary btn-lg">Большая кнопка</button>
+                        <button type="button" class="btn btn-default btn-lg">Большая кнопка</button>
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-primary">По умолчанию</button>
+                        <button type="button" class="btn btn-default">По умолчанию</button>
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-primary btn-sm">Малая кнопка</button>
+                        <button type="button" class="btn btn-default btn-sm">Малая кнопка</button>
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-primary btn-xs">Очень малая кнопка</button>
+                        <button type="button" class="btn btn-default btn-xs">Очень малая кнопка</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>Кнопки. Состояния</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <button type="button" class="btn btn-primary btn-lg">Главная кнопка</button>
+                    <button type="button" class="btn btn-default btn-lg">Кнопка</button>
+                    <br><br>
+                    <button type="button" class="btn btn-primary btn-lg active">Главная кнопка</button>
+                    <button type="button" class="btn btn-default btn-lg active">Кнопка</button>
+                    <br><br>
+                    <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Главная кнопка</button>
+                    <button type="button" class="btn btn-default btn-lg" disabled="disabled">Кнопка</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>..............</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 300px">
+                <div class="col-lg-5 code-col">
+                    <h3>..............</h3>
+                    <p>
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

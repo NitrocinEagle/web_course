@@ -1,0 +1,35 @@
+.example {
+
+}
+.example .code-col .example-marker {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-left: -15px;
+    width: 70px;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+.example .code-col {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: left;
+    height: inherit;
+    border-radius: 10px;
+    border: 1px groove silver;
+}
+.example .code-col > p {
+    background-color: #e1e1e8;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.example .example-col {
+    padding-top: 20px;
+    margin-left: 10px;
+    padding-left: 30px;
+    margin-right: -10px;
+    border-radius: 10px;
+    border: 1px groove silver;
+    height: inherit;
+}
