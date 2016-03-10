@@ -5,7 +5,8 @@
 {% block load_static %}
     {{ block.super }}
     {% load static %}
-    <link href="{% static 'css/lectures.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/lectures.css' %}" rel="stylesheet"
+          type="text/css" media="all"/>
 {% endblock %}
 {% block content %}
     <div class="container" style="margin-top:50px">
@@ -36,7 +37,7 @@
         <br><br><br><br><br><br><br>
         <h1>На что ещё способен bootstrap?</h1>
         <div class="row">
-            <div class="example" style="height: 250px">
+            <div class="example" style="height: 280px">
                 <div class="col-lg-5 code-col">
                     <h3>Заголовки различных уровней</h3>
                     <p>
@@ -72,7 +73,8 @@
                         &ltp class="text-error"&gterror&lt/p&gt<br>
                         &ltp class="text-info"&gtinfo&lt/p&gt<br>
                         &ltp class="text-success"&gtsuccess&lt/p&gt<br>
-                        &ltabbr title="Институт Космических и Информационных Технологий"&gtИКИТ&lt/abbr&gt
+                        &ltabbr title="Институт Космических и Информационных
+                        Технологий"&gtИКИТ&lt/abbr&gt
                     </p>
                 </div>
                 <div class="col-lg-7 example-col">
@@ -96,9 +98,12 @@
                     <h3>Горизонтальные списки описания</h3>
                     <p>
                         &ltdl class="dl-horizontal"><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин 1&lt/dt&gt&ltdd&gtОпределение 1&lt/dd&gt <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин 2&lt/dt&gt&ltdd&gtДлинное пределение 2&lt/dd&gt <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин 3&lt/dt&gt&ltdd&gtОчень-...-очень длинное определение
+                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин
+                        1&lt/dt&gt&ltdd&gtОпределение 1&lt/dd&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин
+                        2&lt/dt&gt&ltdd&gtДлинное пределение 2&lt/dd&gt <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&ltdt&gtТермин
+                        3&lt/dt&gt&ltdd&gtОчень-...-очень длинное определение
                         3&lt/dd&gt <br>
                         &lt/dl>
                     </p>
@@ -127,9 +132,11 @@
                     <p>
                         &ltblockquote class="pull-right"&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&ltp&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я
                         вас молю – утешьтесь, государь!&ltbr&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Спасенью
-                        радоваться надо больше,&ltbr&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Чем горевать
+                        радоваться надо больше,&ltbr&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Чем
+                        горевать
                         о тягостных утратах.<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt/p&gt<br>&nbsp;&nbsp;&nbsp;&nbsp;&ltsmall&gtШекспир
-                        Уильям - &ltcite title="Буря"&gtБуря&lt/cite&gt&lt/small&gt<br>&lt/blockquote&gt
+                        Уильям - &ltcite
+                        title="Буря"&gtБуря&lt/cite&gt&lt/small&gt<br>&lt/blockquote&gt
                     </p>
                 </div>
                 <div class="col-lg-7 example-col">
@@ -139,7 +146,8 @@
                             Спасенью радоваться надо больше,<br>
                             Чем горевать о тягостных утратах.
                         </p>
-                        <small>Шекспир Уильям - <cite title="Буря">Буря</cite></small>
+                        <small>Шекспир Уильям - <cite title="Буря">Буря</cite>
+                        </small>
                     </blockquote>
                 </div>
             </div>
@@ -150,11 +158,15 @@
                 <div class="col-lg-5 code-col">
                     <h3>Таблицы</h3>
                     <p>
-                        &lttable class="table table-hover table-striped table-bordered table-condensed"&gt<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="success"&gt&lt/tr&gt<br>
+                        &lttable class="table table-hover table-striped
+                        table-bordered table-condensed"&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr
+                        class="success"&gt&lt/tr&gt<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="danger"&gt&lt/tr&gt<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="warning"&gt&lt/tr&gt<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr class="info"&gt&lt/tr&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr
+                        class="warning"&gt&lt/tr&gt<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lttr
+                        class="info"&gt&lt/tr&gt<br>
                         &lt/table&gt
                     </p>
                 </div>
@@ -205,11 +217,14 @@
                     <form class="form-inline" role="form">
                         <div class="form-group">
                             <label class="sr-only" for="exampleInputEmail2">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                            <input type="email" class="form-control"
+                                   id="exampleInputEmail2"
+                                   placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="exampleInputPassword2">Пароль</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2"
+                            <input type="password" class="form-control"
+                                   id="exampleInputPassword2"
                                    placeholder="Password">
                         </div>
                         <div class="checkbox">
@@ -217,7 +232,8 @@
                                 <input type="checkbox"> Запомнить меня
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Войти</button>
+                        <button type="submit" class="btn btn-default">Войти
+                        </button>
                     </form>
                 </div>
             </div>
@@ -234,24 +250,30 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            <input type="email" class="form-control"
+                                   id="exampleInputEmail1"
+                                   placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Пароль</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
+                            <input type="password" class="form-control"
+                                   id="exampleInputPassword1"
                                    placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">File input</label>
                             <input type="file" id="exampleInputFile">
-                            <p class="help-block">Example block-level help text here.</p>
+                            <p class="help-block">Example block-level help text
+                                here.</p>
                         </div>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Проверить меня
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-default">Отправить</button>
+                        <button type="submit" class="btn btn-default">
+                            Отправить
+                        </button>
                         <br><br>
                         <label>
                             Выбор
@@ -279,22 +301,29 @@
                     <form role="form">
                         <fieldset disabled>
                             <div class="form-group">
-                                <label for="disabledTextInput">Неактивный ввод</label>
-                                <input type="text" id="disabledTextInput" class="form-control"
+                                <label for="disabledTextInput">Неактивный
+                                    ввод</label>
+                                <input type="text" id="disabledTextInput"
+                                       class="form-control"
                                        placeholder="Disabled input">
                             </div>
                             <div class="form-group">
-                                <label for="disabledSelect">Неактивный select menu</label>
-                                <select id="disabledSelect" class="form-control">
+                                <label for="disabledSelect">Неактивный select
+                                    menu</label>
+                                <select id="disabledSelect"
+                                        class="form-control">
                                     <option>Disabled select</option>
                                 </select>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox"> Не могу проверить это
+                                    <input type="checkbox"> Не могу проверить
+                                    это
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <button type="submit" class="btn btn-primary">
+                                Отправить
+                            </button>
                         </fieldset>
                     </form>
                 </div>
@@ -310,18 +339,24 @@
                 </div>
                 <div class="col-lg-7 example-col">
                     <div class="form-group has-success has-feedback">
-                        <label class="control-label" for="inputSuccess2">Успешный ввод</label>
-                        <input type="text" class="form-control" id="inputSuccess2">
+                        <label class="control-label" for="inputSuccess2">Успешный
+                            ввод</label>
+                        <input type="text" class="form-control"
+                               id="inputSuccess2">
                         <span class="glyphicon glyphicon-ok form-control-feedback"></span>
                     </div>
                     <div class="form-group has-warning has-feedback">
-                        <label class="control-label" for="inputWarning2">Ввод с предупреждением</label>
-                        <input type="text" class="form-control" id="inputWarning2">
+                        <label class="control-label" for="inputWarning2">Ввод с
+                            предупреждением</label>
+                        <input type="text" class="form-control"
+                               id="inputWarning2">
                         <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
                     </div>
                     <div class="form-group has-error has-feedback">
-                        <label class="control-label" for="inputError2">Ввод с ошибкой</label>
-                        <input type="text" class="form-control" id="inputError2">
+                        <label class="control-label" for="inputError2">Ввод с
+                            ошибкой</label>
+                        <input type="text" class="form-control"
+                               id="inputError2">
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                     </div>
                 </div>
@@ -336,11 +371,15 @@
                     </p>
                 </div>
                 <div class="col-lg-7 example-col">
-                    <button type="button" class="btn btn-default">Default</button>
-                    <button type="button" class="btn btn-primary">Primary</button>
-                    <button type="button" class="btn btn-success">Success</button>
+                    <button type="button" class="btn btn-default">Default
+                    </button>
+                    <button type="button" class="btn btn-primary">Primary
+                    </button>
+                    <button type="button" class="btn btn-success">Success
+                    </button>
                     <button type="button" class="btn btn-info">Info</button>
-                    <button type="button" class="btn btn-warning">Warning</button>
+                    <button type="button" class="btn btn-warning">Warning
+                    </button>
                     <button type="button" class="btn btn-danger">Danger</button>
                 </div>
             </div>
@@ -355,20 +394,36 @@
                 </div>
                 <div class="col-lg-7 example-col">
                     <p>
-                        <button type="button" class="btn btn-primary btn-lg">Большая кнопка</button>
-                        <button type="button" class="btn btn-default btn-lg">Большая кнопка</button>
+                        <button type="button" class="btn btn-primary btn-lg">
+                            Большая кнопка
+                        </button>
+                        <button type="button" class="btn btn-default btn-lg">
+                            Большая кнопка
+                        </button>
                     </p>
                     <p>
-                        <button type="button" class="btn btn-primary">По умолчанию</button>
-                        <button type="button" class="btn btn-default">По умолчанию</button>
+                        <button type="button" class="btn btn-primary">По
+                            умолчанию
+                        </button>
+                        <button type="button" class="btn btn-default">По
+                            умолчанию
+                        </button>
                     </p>
                     <p>
-                        <button type="button" class="btn btn-primary btn-sm">Малая кнопка</button>
-                        <button type="button" class="btn btn-default btn-sm">Малая кнопка</button>
+                        <button type="button" class="btn btn-primary btn-sm">
+                            Малая кнопка
+                        </button>
+                        <button type="button" class="btn btn-default btn-sm">
+                            Малая кнопка
+                        </button>
                     </p>
                     <p>
-                        <button type="button" class="btn btn-primary btn-xs">Очень малая кнопка</button>
-                        <button type="button" class="btn btn-default btn-xs">Очень малая кнопка</button>
+                        <button type="button" class="btn btn-primary btn-xs">
+                            Очень малая кнопка
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs">
+                            Очень малая кнопка
+                        </button>
                     </p>
                 </div>
             </div>
@@ -382,40 +437,421 @@
                     </p>
                 </div>
                 <div class="col-lg-7 example-col">
-                    <button type="button" class="btn btn-primary btn-lg">Главная кнопка</button>
-                    <button type="button" class="btn btn-default btn-lg">Кнопка</button>
+                    <button type="button" class="btn btn-primary btn-lg">Главная
+                        кнопка
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Кнопка
+                    </button>
                     <br><br>
-                    <button type="button" class="btn btn-primary btn-lg active">Главная кнопка</button>
-                    <button type="button" class="btn btn-default btn-lg active">Кнопка</button>
+                    <button type="button" class="btn btn-primary btn-lg active">
+                        Главная кнопка
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg active">
+                        Кнопка
+                    </button>
                     <br><br>
-                    <button type="button" class="btn btn-lg btn-primary" disabled="disabled">Главная кнопка</button>
-                    <button type="button" class="btn btn-default btn-lg" disabled="disabled">Кнопка</button>
+                    <button type="button" class="btn btn-lg btn-primary"
+                            disabled="disabled">Главная кнопка
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg"
+                            disabled="disabled">Кнопка
+                    </button>
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="example" style="height: 300px">
+            <div class="example" style="height: 200px">
                 <div class="col-lg-5 code-col">
-                    <h3>..............</h3>
-                    <p>
-                    </p>
+                    <h3>Изображения</h3>
+                    Классы:
+                    <ul>
+                        <li>.img-rounded</li>
+                        <li>.img-circle</li>
+                        <li>.img-thumbnail</li>
+                    </ul>
                 </div>
                 <div class="col-lg-7 example-col">
+                    <img width="120px" height="120px" src="/media/avatars/1.jpg"
+                         alt="..." class="img-rounded">
+                    <img width="120px" height="120px" src="/media/avatars/1.jpg"
+                         alt="..." class="img-circle">
+                    <img width="120px" height="120px" src="/media/avatars/1.jpg"
+                         alt="..." class="img-thumbnail">
                 </div>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="example" style="height: 300px">
+            <div class="example" style="height: 210px">
                 <div class="col-lg-5 code-col">
-                    <h3>..............</h3>
+                    <h3>Фон элемента</h3>
+                    Классы:
+                    <ul>
+                        <li>.text-muted</li>
+                        <li>.text-primary</li>
+                        <li>.text-success</li>
+                        <li>.text-info</li>
+                        <li>.text-warning</li>
+                        <li>.text-danger</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <p class="bg-primary">Primary text</p>
+                    <p class="bg-success">Success text</p>
+                    <p class="bg-info">Information text</p>
+                    <p class="bg-warning">Warning text</p>
+                    <p class="bg-danger">Danger text</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 120px">
+                <div class="col-lg-5 code-col">
+                    <h3>Отображения и скрытия содержимого</h3>
                     <p>
+                        &lt;div class="show"&gt;Блок, который
+                        видим&lt;/div&gt;<br>
+                        &lt;div class="hidden"&gt;Блок, который невидим&lt;/div&gt;
                     </p>
                 </div>
                 <div class="col-lg-7 example-col">
+                    <div class="show">Блок, который видим</div>
+                    <div class="hidden">Блок, который невидим</div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 350px">
+                <div class="col-lg-5 code-col">
+                    <h3>Классы видимости</h3>
+
+                    xs - очень маленькое устройство(< 768px)<br>
+                    sm - маленькое устройство( >= 768px)<br>
+                    md - среднее устройство( >= 992px)<br>
+                    lg - большое устройство( >= 1200px)<br>
+                    <dl>
+                        <dt>.visible[-xs | -sm | -md | -lg]</dt>
+                        <dd>Виден только на [xs | sm | md | lg] устройствах</dd>
+                        <dt>.hidden[-xs | -sm | -md | -lg]</dt>
+                        <dd>Скрыт только на [xs | sm | md | lg] устройствах</dd>
+                    </dl>
+                    <p>
+                        &lt;div class="hidden-lg"&gt;Блок, который мы не увидим
+                        на больших устройствах&lt;/div&gt;<br>
+                        &lt;div class="visible-lg"&gt;Блок, который мы увидим на
+                        больших устройствах&lt;/div&gt;
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <div class="hidden-lg">Блок, который мы не увидим на больших
+                        устройствах
+                    </div>
+                    <br>
+                    <div class="visible-lg">Блок, который мы увидим на больших
+                        устройствах
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1>Javascript</h1>
+                    <h2>Что такое Javascript? И зачем он нужен</h2>
+                    <p>
+                    <ul>
+                        <li>JavaScript - язык, который делает web-странички
+                            «живыми».
+                        </li>
+                        <li>JS-программа - это скрипт.</li>
+                        <li>Cкрипт подключаются к HTML-странице через &lt;script&gt;</li>
+                        <li>Скрипт выполняется сразу же, как
+                            загрузиласьстраница
+                        </li>
+                    </ul>
+                    </p>
+                    <h2>Что умеет JavaScript?</h2>
+                    <p>
+                        Современный JavaScript – это «безопасный» язык
+                        программирования общего назначения. Он не предоставляет
+                        низкоуровневых средств работы с памятью, процессором,
+                        так как изначально был ориентирован на браузеры, в
+                        которых это не требуется.<br>
+                    <ul>
+                        <li>Создавать новые HTML-теги, удалять существующие,
+                            менять стили элементов, прятать, показывать элементы
+                            и т.п.
+                        </li>
+                        <li>Реагировать на действия посетителя, обрабатывать
+                            клики мыши, перемещения курсора, нажатия на
+                            клавиатуру и т.п.
+                        </li>
+                        <li>Посылать запросы на сервер и загружать данные без
+                            перезагрузки страницы (эта технология называется
+                            "AJAX").
+                        </li>
+                        <li>Получать и устанавливать cookie, запрашивать данные,
+                            выводить сообщения…
+                        </li>
+                        <li>и многое другое...</li>
+                    </ul>
+                    </p>
+                    <h2>Преимущества JavaScript</h2>
+                    <p>
+                    <ul>
+                        <li>Полная интеграция с HTML/CSS.</li>
+                        <li>Простые вещи делаются просто.</li>
+                        <li>Поддерживается всеми распространёнными браузерами и
+                            включён по умолчанию.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 350px">
+                <div class="col-lg-5 code-col">
+                    <h3>Привет, Мир!</h3>
+                    <p>function sayHello() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("Привет, Мир!");<br>
+                        }
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <script>
+                        function sayHello_1() {
+                            alert("Привет, Мир!");
+                        }
+                    </script>
+                    <button class="btn-lg btn-success" onclick="sayHello_1()">
+                        Привет, мир!
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-5 code-col">
+                    <h3>Переменные</h3>
+                    <p>function printValues() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var message = "Я - строка"; //
+                        строка<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var number_4 = 4; // число<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var always_true = true; //
+                        логическая переменная<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var MESSAGE = "Я - другая
+                        строка"; /* message и MESSAGE - две разные
+                        переменные*/<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var hello = 'привет', five = 5;
+                        /* можно объявлять переменные и так*/<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("message - " +
+                        message);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("always_true - " +
+                        always_true);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("number_4 - " + number_4);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("MESSAGE - " +
+                        MESSAGE);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("hello + five = " + hello
+                        + five);<br>
+                        }
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <script>
+                        function printValues() {
+                            var message = "Я - строка"; // строка
+                            var number_4 = 4; // число
+                            var always_true = true; // логическая переменная
+                            var MESSAGE = "Я - другая строка"; // message и MESSAGE - две разные переменные
+                            var hello = 'привет', five = 5; // можно объявлять переменные и так
+                            alert("message - " + message);
+                            alert("always_true - " + always_true);
+                            alert("number_4 - " + number_4);
+                            alert("MESSAGE - " + MESSAGE);
+                            alert("hello + five = " + hello + five);
+                        }
+                    </script>
+                    <button class="btn-lg btn-success" onclick="printValues()">
+                        Вывести переменные
+                    </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 250px">
+                <div class="col-lg-5 code-col">
+                    <h3>Привет, %username%!</h3>
+                    <p>function sayHello() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var name =
+                        document.getElementById("name").value;
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("Привет," + name +
+                        "!");<br>
+                        }
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <script>
+                        function sayHello_2() {
+                            var name = document.getElementById("name_2")['value'];
+                            alert("Привет," + name + "!");
+                        }
+                    </script>
+                    <button class="btn-lg btn-success" onclick="sayHello_2()">
+                        Привет, %username%!
+                    </button>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name_2"
+                               placeholder="Ваше имя" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 350px">
+                <div class="col-lg-5 code-col">
+                    <h3>Оператор if. Улучшим приветствие.</h3>
+                    <p>function sayHello() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var name =
+                        document.getElementById("name").value;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (name
+                        == '') {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Привет,
+                        незнакомец!");<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else
+                        {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Привет,"
+                        + name + "!");<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <script>
+                        function sayHello_3() {
+                            var name = document.getElementById("name_3").value;
+                            if (name == "") {
+                                alert("Привет, незнакомец!");
+                            }
+                            else {
+                                alert("Привет," + name + "!");
+                            }
+                        }
+                    </script>
+                    <button class="btn-lg btn-success" onclick="sayHello_3()">
+                        Поздороваться
+                    </button>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name_3"
+                               placeholder="Ваше имя" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 500px">
+                <div class="col-lg-5 code-col">
+                    <h3>Циклы, функции и аргументы</h3>
+                    <p>
+                        function range(number) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var range_list = []<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var i;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for (i = 1; i <= number; i++)
+                        {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range_list.push(i);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return range_list;<br>
+                        }<br>
+                        function printRange() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var number =
+                        parseInt(document.getElementById("number").value);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if (number && number > 0) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(range(number));<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;alert("Нужно ввести
+                        положительное число от 1 до N");<br>
+                        }
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <script>
+                        function range(number) {
+                            var range_list = []
+                            var i;
+                            for (i = 1; i <= number; i++) {
+                                range_list.push(i);
+                            }
+                            return range_list;
+                        }
+                        function printRange() {
+                            var number = parseInt(document.getElementById("number").value);
+                            if (number && number > 0) {
+                                alert(range(number));
+                                return;
+                            }
+                            alert("Нужно ввести положительное число от 1 до N");
+                        }
+                    </script>
+                    <button class="btn-lg btn-success" onclick="printRange()">
+                        Вывести список от 1 до number
+                    </button>
+                    <div class="form-group">
+                        <label for="number">Число</label>
+                        <input type="text" class="form-control" id="number"
+                               placeholder="Введите число" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 250px">
+                <div class="col-lg-5 code-col">
+                    <h3>Поменяем цвет кнопки!</h3>
+                    <p>
+                        function changeColor() {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;var color = document.getElementById("color").value;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;var button = document.getElementById("change_color_btn");<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;button.style = "background: " + color;<br>
+                        }
+                    </p>
+                </div>
+                <div class="col-lg-7 example-col">
+                    <script>
+                        function changeColor() {
+                            var color = document.getElementById("color").value;
+                            var button = document.getElementById("change_color_btn");
+                            button.style = "background: " + color;
+                        }
+                    </script>
+                    <button id="change_color_btn" class="btn-lg btn-success" onclick="changeColor()">
+                        Поменять цвет кнопки
+                    </button>
+                    <div class="form-group">
+                        <label for="color">Введите цвет</label>
+                        <input type="text" class="form-control" id="color"
+                               placeholder="#abcdef или #abc или название цвета" autocomplete="off">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <ul>
+        <li>(c) https://learn.javascript.ru/intro</li>
+    </ul>
+
 {% endblock %}

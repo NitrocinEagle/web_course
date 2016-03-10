@@ -20,10 +20,11 @@
     border: 1px groove silver;
 }
 .example .code-col > p {
-    background-color: #e1e1e8;
+    background-color: #ededed;
     border-radius: 10px;
     font-size: 16px;
 }
+
 .example .example-col {
     padding-top: 20px;
     margin-left: 10px;
