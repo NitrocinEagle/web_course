@@ -13,7 +13,7 @@
                  class="panel-collapse collapse">
                 <div class="panel-body">
                     {{ lecture.about|safe }}
-                    {% if user.username == 'admin' %}
+                    {% if user.is_authenticated and forloop.counter == 3 %}
                         <br>
                         <a href="/lectures/lesson/{{ forloop.counter }}">Текст лекции</a>
                     {% endif %}

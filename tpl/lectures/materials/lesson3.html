@@ -824,9 +824,12 @@
                     <h3>Поменяем цвет кнопки!</h3>
                     <p>
                         function changeColor() {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;var color = document.getElementById("color").value;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;var button = document.getElementById("change_color_btn");<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;button.style = "background: " + color;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var color =
+                        document.getElementById("color").value;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;var button =
+                        document.getElementById("change_color_btn");<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;button.style = "background: " +
+                        color;<br>
                         }
                     </p>
                 </div>
@@ -838,20 +841,20 @@
                             button.style = "background: " + color;
                         }
                     </script>
-                    <button id="change_color_btn" class="btn-lg btn-success" onclick="changeColor()">
+                    <button id="change_color_btn" class="btn-lg btn-success"
+                            onclick="changeColor()">
                         Поменять цвет кнопки
                     </button>
                     <div class="form-group">
                         <label for="color">Введите цвет</label>
                         <input type="text" class="form-control" id="color"
-                               placeholder="#abcdef или #abc или название цвета" autocomplete="off">
+                               placeholder="#abcdef или #abc или название цвета"
+                               autocomplete="off">
                     </div>
                 </div>
             </div>
         </div>
+        <br>
     </div>
-    <ul>
-        <li>(c) https://learn.javascript.ru/intro</li>
-    </ul>
 
 {% endblock %}
