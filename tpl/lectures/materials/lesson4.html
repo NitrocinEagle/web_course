@@ -1,0 +1,568 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    <title>Лекция 3</title>
+{% endblock %}
+{% block load_static %}
+    {{ block.super }}
+    {% load static %}
+    <link href="{% static 'css/lectures.css' %}" rel="stylesheet"
+          type="text/css" media="all"/>
+{% endblock %}
+{% block content %}
+    <div class="container" style="margin-top:50px">
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <ol class="breadcrumb">
+                    <li><a href="/home">Главная</a></li>
+                    <li><a href="/lectures">Лекции</a></li>
+                    <li class="active">Лекция 4</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1>Лекция 4</h1>
+                    <h3>JQuery</h3>
+                </div>
+                <h1>План лекции</h1>
+                <ol>
+                    <li>JQuery. Что это?</li>
+                    <li>Рассмотреть его возможности.</li>
+                </ol>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h1>jQuery</h1>
+                    <h2>Что такое JQuery? И зачем он нужен</h2>
+                    <p>
+                        jQuery – это JavaScript-библиотека, фокусирующаяся
+                        на взаимодействии JavaScript, HTML и CSS.
+                    <ul>
+                        <li>Обращаться к любому элементу DOM (объектной
+                            модели документа) и не только обращаться, но и
+                            манипулировать ими.
+                        </li>
+                        <li>Работать с событиями.</li>
+                        <li>Легко осуществлять различные визуальные
+                            эффекты.
+                        </li>
+                        <li>Работать с AJAX (технология, позволяющая
+                            общаться с сервером без перезагрузки страницы)
+                        </li>
+                        <li>Имеет огромное количество JavaScript плагинов,
+                            предназначенных для создания элементов
+                            пользовательских интерфейсов.
+                        </li>
+                    </ul>
+                    </p>
+                    <h2>Как начать пользоваться JQuery?</h2>
+                    <p>
+                    <ul>
+                        <li>Скачать саму библиотеку на сайте разработчиков -
+                            <a href="https://jquery.com/">https://jquery.com/</a>
+                        </li>
+                        <li>Разорхивировать её и перенести в ту же папку,
+                            где находится наша html-страница
+                        </li>
+                        <li>Подключить jQuery к html-странице: <br>
+                            <strong>&lt;script type="text/javascript"
+                                src="jquery.js"&gt;&lt;/script&gt;</strong>
+                        </li>
+                        <li>Создать js-файл и тоже подключить его к
+                            странице:<br>
+                            <strong>&lt;script type="text/javascript"
+                                src="script.js"&gt;&lt;/script&gt;</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Синктасис JQuery</h3>
+                    <p>
+                        <strong>$('селектор').действие('свойства
+                            действия');</strong>
+                        <br>Cелектор - элемент или элементы, с которыми мы будем
+                        что-либо делать.
+                        <br>Действие - что именно мы будем делать с выбранными
+                        элементами. Мы можем
+                        добавить какой-либо эффект, css-стиль, изменить html-код
+                        и т.д.
+                        Здесь же могут быть указаны какие-либо события.
+                        <br>Свойства действия - если они предусмотрены
+                        действием.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Селекторы</h3>
+                    <p>
+                        Селекторы - это элементы, с которыми мы хотим что-либо
+                        сделать.<br>
+                    <ul>
+                        <li>
+                            #id - выбирает единственный элемент с переданным
+                            идентификатором (id).<br>
+                            <strong>$("#lok").css("border", "1px solid
+                                red");</strong>
+                        </li>
+                        <li>
+                            .class - выбирает все элементы с переданным классом.<br>
+                            <strong>$(".lok").css("border", "1px solid red");</strong>
+                        </li>
+                        <li>
+                            elements - выбирает все элементы с выбранным именем.<br>
+                            <strong>$("div").css("border", "1px solid red");</strong>
+                        </li>
+                        <li>
+                            * - выбирает все элементы, включая head и body.<br>
+                            <strong> $("*").css("border", "1px solid red");</strong>
+                        </li>
+                        <li>
+                            selector1, ..., selectorN - выбирает все элементы, переданные в селекторах.<br>
+                            <strong>$("div, span, p.lok").css("border", "1px solid red");</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Иерархические селекторы</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            parent child - выбирает все элементы, являющиеся потомками для определенного элемента предка.<br>
+                            <strong>$("form input").css("border", "1px solid red");</strong>
+                        </li>
+                        <li>
+                            parent > child - выбирает всех прямых наследников элемента-родителя.<br>
+                            <strong>$("#content > *").css("border", "1px solid red");</strong>
+                        </li>
+                        <li>
+                            Селекторы форм<br>
+                            :input - выбираются все элементы input.<br>
+                            :text - выбираются все элементы input типа text.<br>
+                            :password - выбираются все элементы input типа password.<br>
+                            :radio - выбираются все элементы input типа radio.<br>
+                            :checkbox - выбираются все элементы input типа checkbox.<br>
+                            :submit - выбираются все элементы input типа submit.<br>
+                            :reset - выбираются все элементы input типа reset.<br>
+                            :button - выбираются все элементы input типа button.<br>
+                            :image - выбираются все элементы input типа image.<br>
+                            :file - выбираются все элементы input типа file.<br>
+                            :hidden - выбираются все элементы input типа hidden или просто скрытые.<br>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Фильтры</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            :first - выбирает первый элемент соответствующего селектора.<br>
+                            <strong>$("tr:first").css("font-style", "italic");</strong>
+                        </li>
+                        <li>
+                            :last - выбирает последний элемент соответствующего селектора.<br>
+                            <strong>$("tr:last").css("font-style", "italic");</strong>
+                        </li>
+                        <li>
+                            :even - выбирает четные элементы, начиная с нуля.
+                        </li>
+                        <li>
+                            :odd - выбирает нечетные элементы, начиная с нуля.
+                        </li>
+                        <li>
+                            :eq(index) - выбирает элемент по его индексу (начиная с нуля).<br>
+                            <strong> $("td:eq(2)").css("font-style", "italic");</strong>
+                        </li>
+                        <li>
+                            :gt(index) - выбирает элементы с индексом больше указанного.<br>
+                            <strong>$("td:gt(2)").css("font-style", "italic");</strong>
+                        </li>
+                        <li>
+                            :lt(index) - выбирает элементы с индексом меньше указанного.<br>
+                            <strong> $("td:lt(4)").css("font-style", "italic");</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Фильтры видимости</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            :hidden - выбирает все скрытые элементы и элементы input, имеющие тип "hidden".<br>
+                            <strong>$("div:hidden").show();</strong>
+                        </li>
+                        <li>
+                            :visible - выбирает все видимые элементы.<br>
+                            <strong>$("div:visible").css("color", "red");</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Фильтры атрибутов</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            [attribute] - выбирает все элементы с указанным атрибутом.<br>
+                            <strong>$("div[id]").css("color", "red");</strong>
+                        </li>
+                        <li>
+                            [attribute=value] - выбирает элементы с атрибутом, значение которого соответствует указанному.<br>
+                            <strong>$("input[name='Main']").css("color", "red");</strong>
+                        </li>
+                        <li>
+                            [attribute^=value] - выбирает все элементы, соответствующий атрибут которых начинается с указанного значения.<br>
+                            <strong>$("input[name^='news']").css("color", "red");</strong>
+                        </li>
+                        <li>
+                            [selector1]...[selectorN] - выбирает все элементы, которые имеют указанные атрибуты и соответствующие значения.<br>
+                            <strong>$("input[id][name*='news']").css("color", "red");</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Фильтры форм</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            :enabled / :disabled - выбирает все элементы, имеющие активное (enabled) / запрещенное (disabled) состояние.<br>
+                            <strong>$("input:enabled").css("color", "red");</strong>
+                        </li>
+                        <li>
+                            :checked - выбирает все элементы, которые отмечены.<br>
+                            <strong>$("input:checked").lenght;</strong>
+                        </li>
+                        <li>
+                            :selected - выбирает все выбранные элементы.
+                            <strong> $("select option:selected").lenght;</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example" style="height: 400px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Методы для работы с CSS-стилями</h3>
+                    <p>
+                    В jQuery имеется три категории методов: одни манипулируют с
+                        элементами, подходящими по шаблону; вторые возвращают
+                        значения элемента, а третьи изменяют сами элементы.
+                    <ul>
+                        <li>
+                            .css(name,value) - Добавление какому-либо элементу стиль<br>
+                            <strong>$("div").css("border", "1px solid blue");</strong>
+                        </li>
+                        <li>
+                            .css({properties}) - Если необходимо задать для
+                            элемента несколько CSS-правил, то лучше использовать
+                            эту конструкцию<br>
+                            <strong>$("div").css({ border:"1px solid blue", fontWeight:"bolder", backgroundColor:"red" });</strong>
+                        </li>
+                        <li>
+                            .addClass(class) - Добавление класса
+                            <strong>$("p:last").addClass("main");</strong>
+                        </li>
+                        <li>
+                            .removeClass(class) - Удаление класса
+                            <strong>$("p:even").removeClass("main");</strong>
+                        </li>
+                        <li>
+                            .toggleClass(class) - Удаление класса, если таковой присутствует, либо добавление класса, если таковой отсутсвует.
+                            <strong>$("p").toggleClass("main");</strong>
+                        </li>
+                    <li>
+                            .height([value]) или .width([value]) - Задание или получение высоты/ширины элемента
+                            <strong>$("div").height();<br>$("div").height(200);</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Методы для работы с html</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            html(val) - добавляет html-код в выбранные элементы.<br>
+                            <strong>$("div.sp").html("&lt;span&gt;Привет&lt;/span&gt;");</strong>
+                        </li>
+                        <li>
+                            .text() / .val() - возвращает текстовое содержимое элемента / значение элемента.<br>
+                            <strong> $("p").text();</strong>
+                        </li>
+                        <li>
+                            text(val) / val(val) - установит текст для элемента / значение для элемента.<br>
+                            <strong> $("p").text("Привет!");</strong>
+                        </li>
+                        <li>
+                            append(content) - добавляет content внутрь всех выбранных элементов ПОСЛЕ существующего контента.<br>
+                            <strong>$("p").append("&lt;b&gt;Привет&lt;/b&gt;");</strong>
+                        </li>
+                        <li>
+                            appendTo(content) - обратная операция, добавляет В content все выбранные элементы.<br>
+                            <strong> $("p").appendTo("#main");</strong><br>
+                            Иными словами:<br>
+                            $(A).append(B) - добавит В в конец А.<br>
+                            $(A).appendTo(B) - добавит А в конец В.
+                        </li>
+                        <li>
+                            prepend(content) - добавляет content внутрь всех выбранных элементов ДО существующего контента.<br>
+                            <strong>$("p").prepend("&lt;b&gt;Привет&lt;/b&gt;");</strong>
+                        </li>
+                        <li>
+                            prependTo(content) - обратная операция, добавляет В content все выбранные элементы.<br>
+                            <strong>$("p").prependTo("#main");</strong>
+                            Иными словами:<br>
+                            $(A).prepend(B) - добавит В в начало А.<br>
+                            $(A).prependTo(B) - добавит А в начало В.<br>
+                        </li>
+                        <li>
+                            wrap(html) - оборачивает каждый элемент в элемент обертку.<br>
+                            <strong>$("p").wrap("&lt;span&gt;&lt;/span&gt;");</strong>
+                        </li>
+                        <li>
+                            wrapAll(html) - оборачивает все элементы в ОДИН элемент обертку.<br>
+                            <strong>$("p").wrapAll("&lt;span&gt;&lt;/span&gt;");</strong>
+                        </li>
+                        <li>
+                            wrapInner(html) - оборачивает внутренне содержание каждого элемента.<br>
+                            <strong> $("p").wrapInner("&lt;em&gt;&lt;/em&gt;");</strong>
+                        </li>
+                        <li>
+                            replaceWith(content) - замещает одни элементы другими.<br>
+                            <strong> $("span").replaceWith("&lt;div&gt;&lt;/div&gt;");</strong>
+                        </li>
+                        <li>
+                            replaceAll(selector) - обратная операция, т.е. все selector-ы будут поменяны на элементы.<br>
+                            <strong>$("span").replaceAll("&lt;div&gt;&lt;/div&gt;");</strong>
+                        </li>
+                        <li>
+                            empty() - удаляет из элемента все узлы-потомки, включая текст.<br>
+                            <strong> $("span").empty();</strong>
+                        </li>
+                        <li>
+                            remove() - удаляет сами элементы.<br>
+                            <strong>$("span").remove();</strong>
+                        </li>
+                        <li>
+                            clone() - клонирует элементы.<br>
+                            <strong>$("b").clone().append("div");</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Методы для работы с атрибутами и фильтрами</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            attr(name) - обеспечивает доступ к значению указанного атрибута первого элемента в наборе.<br>
+                            <strong>var a=$("i").attr("title");<br>$("div").text(a);</strong>
+                        </li>
+                        <li>
+                            attr(properties) - установит атрибуты во всех отобранных элементах.<br>
+                            <strong>$("img").attr({src:"images/pict.gif", alt:"рисунок"});</strong>
+                        </li>
+                        <li>
+                            attr(key,value) - установит значение (value) атрибута (key) для всех отобранных элементов.<br>
+                            <strong>$("button").attr("disabled", "disabled");</strong>
+                        </li>
+                        <li>
+                            removeAttr(name) - удалит указанный атрибут в всех элементах.<br>
+                            <strong>$("img").removeAttr("alt");</strong>
+                        </li>
+                        <li>
+                            hasClass(class) - возвращает истину (true), если указанный класс присутствует хотя бы в одном из элементов.<br>
+                            <strong> if ($("p:last").hasClass("selected"))<br>$(this).css("background","blue");</strong>
+                        </li>
+                        <li>
+                            filter(expr) - ограничивает элементы, к которым следует что-либо применить.<br>
+                            <strong>$("p").filter(".blue").css("background","blue");</strong>
+                        </li>
+                        <li>
+                            prependTo(content) - обратная операция, добавляет В content все выбранные элементы.<br>
+                            <strong>$("p").prependTo("#main");</strong>
+                        </li>
+                        <li>
+                            not(expr) - обозначает элементы, к которым не следует что-либо применить.<br>
+                            <strong>$("p").not(".blue").css("background","blue");</strong>
+                        </li>
+                        <li>
+                            is(expr) - возвращает истину (true), если хотя бы один из элементов соответствует выражению.<br>
+                            <strong>if ($(this).is(":last-child"))<br>$("p").text("последний");</strong>
+                        </li>
+                        <li>
+                            slice(start, end) - отбирает поднабор из набора элементов.<br>
+                            <strong>$("p").slice(1,4).css("background","blue");</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Методы по обработке событий</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            ready(fn) - назначает функцию, которая будет выполняться, когда документ готов к работе.<br>
+                            <strong> $(document).ready(init);</strong>
+                        </li>
+                        <li>
+                            bind(type, fn) - связывает обработчик события с самим событием.<br>
+                            <strong> $(div).bind('click', init);</strong>
+                        </li>
+                        <li>
+                            one(type, fn) - связывает обработчик события с самим событием, но выполняется он только один раз.<br>
+                            <strong>$(div).one('click', init);</strong>
+                        </li>
+                        <li>
+                            hover(over, out) - когда указатель мыши находится над
+                            объектом, срабатывает функция over, а когда указатель
+                            мыши выходит за объект, то функция out.<br>
+                            <strong>$(document).ready(init); <br>
+                                function init(){ $('p').hover(hOver, hOut); <br>
+                                } <br>
+                                function hOver(){ <br>
+                                $(this).css("background-color", "blue"); <br>
+                                } <br>
+                                function hOut(){ <br>
+                                $(this).css("background-color", "white"); <br>
+                                }</strong>
+                        </li>
+                        <li>
+                            toggle(fn1, fn2, ...fn) - переключатель между функциями.
+                            Щелчок по элементу вызывает функцию fn1, повторный щелчок -
+                            функцию fn2, третий щелчок - функцию fn3 и т.д.<br>
+                            <strong>$('p').toggle(<br>
+                                function(){<br>
+                                $(this).css("background-color", "blue");<br>
+                                }, <br>
+                                function(){<br>
+                                $(this).css("background-color", "white");<br>
+                                });</strong>
+                        </li>
+                        <li>
+                            click(fn) - функция fn связывается с событием click.<br>
+                            <strong>$('div').click( function(){$(this).css("background-color", "blue");} );</strong>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="example">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 example-col">
+                    <h3>Визуальные эффекты</h3>
+                    <p>
+                    <ul>
+                        <li>
+                            <strong>Методы видимости - hide(), show() и toggle()</strong><br>
+                            hide() - скрыть,<br>
+                            show() - показать,<br>
+                            toggle() - показать, если скрыты и скрыть, если видимы.
+                        </li>
+                        <li>
+                            <strong>Методы видимости(продолжение)</strong><br>
+                            hide(speed, callback) - скрыть,<br>
+                            show(speed, callback) - показать,<br>
+                            toggle(speed, callback) - переключить (показать, если скрыты и наоборот), где:<br>
+                            speed - скорость изменения высоты, ширины или свойства opacity (прозрачность) элемента. Может принимать три значения: slow (медленно), normal (нормально) или fast (быстро), а также значение в миллисекундах.<br>
+                            callback - функция, которая будет выполняться после завершения анимации. Ее присутствие вовсе необязательно.
+                        </li>
+                        <li>
+                            <strong>Методы свертывания - slideDown(), slideUp() и slideToggle()</strong><br>
+                            slideUp() - свернуть,<br>
+                            slideDown() - развернуть,<br>
+                            toggle() - развернуть, если скрыт и свернуть, если видим.<br>
+                        </li>
+                        <li>
+                            <strong>Методы свертывания(продолжение)</strong><br>
+                            slideUp(speed, callback) - свернуть,<br>
+                            slideDown(speed, callback) - развернуть,<br>
+                            slideToggle(speed, callback) - переключить (развернуть, если скрыты и наоборот), где:<br>
+                            speed - скорость изменения высоты элемента. Может принимать три значения: slow (медленно), normal (нормально) или fast (быстро), а также значение в миллисекундах.<br>
+                            callback - функция, которая будет выполняться после завершения анимации. Ее присутствие необязательно.
+                        </li>
+                        <li>
+                            <strong>Методы исчезновения - fadeTo(), fadeOut() и fadeIn()</strong><br>
+                            fadeTo(speed, opacity, callback) - уменьшает свойство opacity (прозрачность) к заданному значению,<br>
+                            fadeOut(speed, callback) - уменьшает свойство opacity (прозрачность),<br>
+                            fadeIn(speed, callback) - увеличивает свойство opacity (прозрачность), где:<br>
+                            speed - скорость изменения прозрачности элемента. Может принимать три значения: slow (медленно), normal (нормально) или fast (быстро), а также значение в миллисекундах.<br>
+                            opacity - значение прозрачности, до которого оно будет уменьшено (число от 0 до 1).<br>
+                            callback - функция, которая будет выполняться после завершения анимации. Ее присутствие необязательно.<br>
+                        </li>
+                        <li>
+                            <strong>Методы анимации - animate() и stop()</strong><br>
+                            animate(params, options) - анимирует стилевые свойства, где:<br>
+                            params - атрибуты css, которые хотим анимировать ("width", "top", "border"...).<br>
+                            options - свойства анимации (в том числе скорость).<br>
+                            stop() - останавливает анимацию.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
