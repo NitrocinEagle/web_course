@@ -1,6 +1,7 @@
 # -*- coding: utf8 -*-
 from django.views.generic import ListView
 from django.http.response import Http404
+from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, InvalidPage
 from models import News
 
@@ -22,4 +23,4 @@ class NewsPage(ListView):
     context_object_name = 'article'
 
     def get_queryset(self):
-        return News.objects.get(id=self.args[0])
+        return get_object_or_404(News, id=self.args[0])
