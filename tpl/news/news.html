@@ -1,9 +1,9 @@
 <h2>Новости</h2>
 {% for topic in news %}
-<div class="row">
-    <h3>{{ topic.topic|safe }}</h3>
-    <h4>{{ topic.announce|safe }}</h4>
-    <p>{{ topic.text|safe }}</p>
-</div>
-<hr>
+    <div class="row">
+        <h6>Дата публикации:{{ topic.date }}</h6>
+        <h3><a href="/news/page/{{ topic.id }}/">{{ topic.topic|safe }}</a></h3>
+        <h4>{{ topic.announce|safe }}</h4>
+    </div>
+    <hr>
 {% endfor %}

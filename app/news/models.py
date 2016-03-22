@@ -7,6 +7,7 @@ class News(models.Model):
 
     topic = models.CharField(max_length=128)
     announce = models.TextField()
+    date = models.DateTimeField(blank=True)
     text = models.TextField()
 
     def __unicode__(self):
