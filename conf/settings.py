@@ -109,6 +109,7 @@ STATICFILES_DIRS = (
     os.path.join(STATIC_ROOT, "assets"),
     os.path.join(STATIC_ROOT, "timetable"),
     os.path.join(STATIC_ROOT, "lectures"),
+    os.path.join(STATIC_ROOT, "1april"),
     os.path.join(STATIC_ROOT, "user"),
 )
 
