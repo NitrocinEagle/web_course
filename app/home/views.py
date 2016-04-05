@@ -32,6 +32,3 @@ class HomeCourseView(ListView):
 
     def get_queryset(self):
         return News.objects.all()[:self.news_view_count]
-
-class Home1AprilView(TemplateView):
-    template_name = 'home/1april.html'
