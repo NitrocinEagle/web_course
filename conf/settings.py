@@ -110,6 +110,9 @@ STATICFILES_DIRS = (
     os.path.join(STATIC_ROOT, "timetable"),
     os.path.join(STATIC_ROOT, "lectures"),
     os.path.join(STATIC_ROOT, "user"),
+    os.path.join(STATIC_ROOT, "css"),
+    os.path.join(STATIC_ROOT, "js"),
+    os.path.join(STATIC_ROOT, "img"),
 )
 
 STATICFILES_FINDERS = (

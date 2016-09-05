@@ -26,7 +26,7 @@ class LogoutView(View):
 
 
 class HomeCourseView(ListView):
-    template_name = 'home/home.html'
+    template_name = 'home/index.html'
     context_object_name = 'news'
     news_view_count = 2
 

@@ -1,0 +1,39 @@
+.modal-content {
+    height: 60%;
+    width: 60%;
+    margin: auto;
+}
+
+.modal-header {
+    height: 15%;
+}
+
+.modal-body {
+    height: 70%;
+    text-align: center;
+
+}
+
+.modal-footer {
+    height: 15%;
+}
+
+
+
+@media only screen and (min-width: 960px) {
+    .modal-content {
+        width: 500px;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 960px) {
+    .modal-content {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .modal-content {
+        width: 100%;
+    }
+}
