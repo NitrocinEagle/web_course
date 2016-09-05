@@ -41,7 +41,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Курсы по веб-разработке</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Курс по веб-разработке</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,13 +51,19 @@
                         <a class="page-scroll" href="#about">О курсе</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Что ждёт</a>
+                        <a class="page-scroll" href="#services">Что вас ждёт</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Технологии</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#request">Подать заявку</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Контакты</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/login">Вход</a>
                     </li>
                 </ul>
             </div>
@@ -69,7 +75,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Бесплатные курсы по веб-разработке в ИКИТ СФУ.</h1>
+                <h1 id="homeHeading">Курсы по веб-разработке в ИКИТ СФУ</h1>
                 <hr>
                 <p>Хочешь заниматься веб-разработкой, научиться создавать веб-приложения, повысить свои навыки в данной области? Тогда добро пожаловать!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Хочу узнать больше</a>
@@ -85,7 +91,7 @@
                     <hr class="light">
                     <p class="text-faded">Данный курс проходит один семестр и является ознакомительным. Во время этого
                         курса студент получает базовые знания в области веб-разработке, с которыми он сможет двигаться
-                        дальше!</p>
+                        дальше! И да, этот курс абсолютно бесплатен :)</p>
                     <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Что ожидать?</a>
                 </div>
             </div>
@@ -234,11 +240,56 @@
     </section>
 
     <aside class="bg-dark">
-        <div class="container text-center">
+        <div id="request" class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
+                <h2>Хочешь попасть на курс? Подай заявку</h2>
+                <a class="btn btn-default btn-xl sr-button" onclick="$(this).hide(); $('#request-form').slideDown();">Подать заявку</a>
+                <br><br>
             </div>
+        </div>
+        <div id="request-form" class="container text-center" hidden>
+            <form class="form-horizontal" role="form">
+                <div class="form-group form-group-lg">
+                    <label for="inputName" class="col-sm-4 control-label">Как
+                        вас зовут?</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="bg-dark form-control"
+                               id="inputName" placeholder="Василий Пупкин">
+                    </div>
+                </div>
+                <div class="form-group form-group-lg">
+                    <label for="inputGroup" class="col-sm-4 control-label">В
+                        какой группе вы учитесь?</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="bg-dark form-control"
+                               id="inputGroup" placeholder="КИ14-09Б">
+                    </div>
+                </div>
+                <div class="form-group form-group-lg">
+                    <label for="inputEmail" class="col-sm-4 control-label">Ваш
+                        почтовый адрес?</label>
+                    <div class="col-sm-8">
+                        <input type="email" class="bg-dark form-control"
+                               id="inputEmail"
+                               placeholder="v_pupkin96@mail.ru">
+                    </div>
+                </div>
+                <div class="form-group form-group-lg">
+                    <label for="inputGroup" class="col-sm-4 control-label">Страничка из социальных сетей</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="bg-dark form-control"
+                               id="inputGroup" placeholder="vk.com/vpupkin">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button type="submit"
+                                class="btn btn-default btn-xl btn-block">
+                            Подать заявку
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </aside>
 
@@ -246,17 +297,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">Напишите нам сами!</h2>
                     <hr class="primary">
-                    <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p>Мы постараемся ответить как можно скорее :)</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
+                    <i class="fa fa-vk fa-3x sr-contact"></i>
+                    <p><a href="https://vk.com/id38187443">vk.com/id38187443</a></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:mistsxd@gmail.com">mistsxd@gmail.com</a></p>
                 </div>
             </div>
         </div>
