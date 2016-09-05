@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +40,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span> Меню <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Курс по веб-разработке</a>
             </div>
@@ -75,7 +76,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Курсы по веб-разработке в ИКИТ СФУ</h1>
+                <h1 id="homeHeading">Курс по веб-разработке в ИКИТ СФУ</h1>
                 <hr>
                 <p>Хочешь заниматься веб-разработкой, научиться создавать веб-приложения, повысить свои навыки в данной области? Тогда добро пожаловать!</p>
                 <a href="#about" class="btn btn-primary btn-xl page-scroll">Хочу узнать больше</a>
@@ -90,7 +91,7 @@
                     <h2 class="section-heading">Этой твой шанс научиться новому!</h2>
                     <hr class="light">
                     <p class="text-faded">Данный курс проходит один семестр и является ознакомительным. Во время этого
-                        курса студент получает базовые знания в области веб-разработке, с которыми он сможет двигаться
+                        курса студент получает базовые знания в области веб-разработки, с которыми он сможет двигаться
                         дальше! И да, этот курс абсолютно бесплатен :)</p>
                     <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Что ожидать?</a>
                 </div>
@@ -150,11 +151,11 @@
                         <img src="{% static 'portfolio/fullsize/1.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Набор верстальщика для выживания
+                                </div>
+                                <div class="project-category text-faded">
+                                    Изучите основы создания красивых страниц со взрывами и анимацией
                                 </div>
                             </div>
                         </div>
@@ -165,11 +166,11 @@
                         <img src="{% static 'portfolio/fullsize/2.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Базы данных
+                                </div>
+                                <div class="project-category text-faded">
+                                    Перестанете хранить данные в конспектах
                                 </div>
                             </div>
                         </div>
@@ -180,11 +181,11 @@
                         <img src="{% static 'portfolio/fullsize/3.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Keep It Simple Stupid
+                                </div>
+                                <div class="project-category text-faded">
+                                    Выучите язык Python и познаете его дзен
                                 </div>
                             </div>
                         </div>
@@ -195,11 +196,11 @@
                         <img src="{% static 'portfolio/fullsize/4.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Don't Repeat Yourself
+                                </div>
+                                <div class="project-category text-faded">
+                                    Изучите веб-фреймворк Django, с помощью которого можно создать полноценное веб-приложение
                                 </div>
                             </div>
                         </div>
@@ -210,11 +211,11 @@
                         <img src="{% static 'portfolio/fullsize/5.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Системы контроля версий
+                                </div>
+                                <div class="project-category text-faded">
+                                    Узнаете, как работать в команде с различными версиями вашего приложения
                                 </div>
                             </div>
                         </div>
@@ -225,11 +226,11 @@
                         <img src="{% static 'portfolio/fullsize/6.jpg' %}" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Do It Yourself!
+                                </div>
+                                <div class="project-category text-faded">
+                                    На курсе вас ждёт разработка проекта, в котором вы задействуете все эти технологии
                                 </div>
                             </div>
                         </div>
@@ -248,43 +249,20 @@
             </div>
         </div>
         <div id="request-form" class="container text-center" hidden>
-            <form class="form-horizontal" role="form">
-                <div class="form-group form-group-lg">
-                    <label for="inputName" class="col-sm-4 control-label">Как
-                        вас зовут?</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="bg-dark form-control"
-                               id="inputName" placeholder="Василий Пупкин">
+            <form class="form-horizontal" role="form" action="/" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group form-group-lg">
+                        <label for="{{ field.id_for_label }}"
+                               class="col-sm-4 control-label">{{ field.label }}</label>
+                        <div class="col-sm-8">
+                            {% render_field field placeholder=field.help_text class="form-control bg-dark" %}
+                        </div>
                     </div>
-                </div>
-                <div class="form-group form-group-lg">
-                    <label for="inputGroup" class="col-sm-4 control-label">В
-                        какой группе вы учитесь?</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="bg-dark form-control"
-                               id="inputGroup" placeholder="КИ14-09Б">
-                    </div>
-                </div>
-                <div class="form-group form-group-lg">
-                    <label for="inputEmail" class="col-sm-4 control-label">Ваш
-                        почтовый адрес?</label>
-                    <div class="col-sm-8">
-                        <input type="email" class="bg-dark form-control"
-                               id="inputEmail"
-                               placeholder="v_pupkin96@mail.ru">
-                    </div>
-                </div>
-                <div class="form-group form-group-lg">
-                    <label for="inputGroup" class="col-sm-4 control-label">Страничка из социальных сетей</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="bg-dark form-control"
-                               id="inputGroup" placeholder="vk.com/vpupkin">
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <button type="submit"
-                                class="btn btn-default btn-xl btn-block">
+                        <button type="submit" class="btn btn-default btn-xl btn-block">
                             Подать заявку
                         </button>
                     </div>

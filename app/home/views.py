@@ -1,10 +1,12 @@
 # -*- coding: utf8 -*-
-from django.contrib.auth import login, logout
-from django.http import HttpResponseRedirect
-from django.views.generic import FormView, ListView, TemplateView
-from django.views.generic.base import View
-from django.contrib.auth.forms import AuthenticationForm
 from app.news.models import News
+from app.requests.forms import RequestForm
+from app.requests.models import Request
+from django.contrib.auth import login, logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.http import HttpResponseRedirect
+from django.views.generic import FormView, TemplateView
+from django.views.generic.base import View
 
 
 class LoginFormView(FormView):
@@ -25,10 +27,20 @@ class LogoutView(View):
         return HttpResponseRedirect("/home")
 
 
-class HomeCourseView(ListView):
+class HomeCourseView(FormView):
     template_name = 'home/index.html'
-    context_object_name = 'news'
     news_view_count = 2
+    form_class = RequestForm
+    success_url = '/thanks'
 
-    def get_queryset(self):
-        return News.objects.all()[:self.news_view_count]
+    def get_context_data(self, **kwargs):
+        kwargs['news'] = News.objects.all()[:self.news_view_count]
+        return super(HomeCourseView, self).get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        Request(**form.cleaned_data).save()
+        return super(HomeCourseView, self).form_valid(form)
+
+
+class ThanksView(TemplateView):
+    template_name = 'home/thanks.html'

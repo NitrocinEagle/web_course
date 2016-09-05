@@ -12,6 +12,7 @@ INSTALLED_APPS = (
     'app.lectures',
     'app.news',
     'app.timetable',
+    'app.requests',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -20,6 +21,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = [
