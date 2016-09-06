@@ -1,4 +1,5 @@
 # -*- coding: utf8 -*-
+from app.faq.models import FAQ
 from app.news.models import News
 from app.requests.forms import RequestForm
 from app.requests.models import Request
@@ -35,6 +36,7 @@ class HomeCourseView(FormView):
 
     def get_context_data(self, **kwargs):
         kwargs['news'] = News.objects.all()[:self.news_view_count]
+        kwargs['faqs'] = FAQ.objects.all()
         return super(HomeCourseView, self).get_context_data(**kwargs)
 
     def form_valid(self, form):
