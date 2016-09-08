@@ -43,6 +43,13 @@ class HomeCourseView(FormView):
         Request(**form.cleaned_data).save()
         return super(HomeCourseView, self).form_valid(form)
 
+    def form_invalid(self, form):
+        return HttpResponseRedirect('/request_fail')
+
 
 class ThanksView(TemplateView):
     template_name = 'home/thanks.html'
+
+
+class RequestFailView(TemplateView):
+    template_name = 'home/request_fail.html'
