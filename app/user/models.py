@@ -7,7 +7,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     name = models.CharField(max_length=128)
     avatar = models.ImageField(upload_to="avatars", blank=True)
-    group = models.CharField(blank=True, max_length=8)
+    group = models.CharField(blank=True, max_length=16)
     sub_group = models.IntegerField(blank=True)
     email = models.EmailField(blank=True)
     date_joined = models.DateField()

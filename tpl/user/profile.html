@@ -17,13 +17,13 @@
     <b>Группа:</b> {{ user_profile.group }} <br>
     <b>Подгруппа на курсе:</b>
     {% if user_profile.sub_group == 1 %}
-        1 (практика по понедельникам)
+        1
     {% elif user_profile.sub_group == 2 %}
-        2 (практика по пятницам)
+        2
     {% elif user_profile.sub_group == 0 %}
         определяется...
     {% elif user_profile.sub_group == 3 %}
-        Готов приходить и по понедельникам, и по пятницам
+        3
     {% endif %}
     <br>
     <b>Email:</b>{{ user_profile.email }} <br>

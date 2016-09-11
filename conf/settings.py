@@ -3,6 +3,8 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$1r=+^b9$pj1q05lc92d*-%%7q-lcu#+&94n5v40wejpkvm2ox'
 
+SITE_ID = 1
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -20,9 +22,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
     'corsheaders',
     'widget_tweaks',
+    'generic_positions',
+    'multilingual_survey',
+    'django_libs',
 )
 
 MIDDLEWARE_CLASSES = [
@@ -43,7 +49,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(PROJECT_ROOT, "tpl")
+            os.path.join(PROJECT_ROOT, "tpl"),
+            os.path.join(PROJECT_ROOT, "tpl/survey"),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

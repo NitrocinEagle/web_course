@@ -1,0 +1,43 @@
+{% load widget_tweaks %}
+<!DOCTYPE html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Вход на сайт</title>
+    {% include 'base/statics.html' %}
+    {% load static %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css"
+          media="all"/>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" role="form" action="" method="post">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Регистрация</h2>
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}"
+                       class="col-sm-3 col-sm-offset-1 control-label">{{ field.label }}</label>
+                <div class="col-sm-5">
+                    {% if 'password' in field.name %}
+                        {% render_field field class="form-control" placeholder=field.help_text id=field.id_for_label type="password" %}
+                    {% else %}
+                        {% render_field field class="form-control" placeholder=field.help_text id=field.id_for_label %}
+                    {% endif %}
+                    <span class="text-danger">{{ field.errors }}</span>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-5">
+                <button type="submit" class="btn btn-block btn-success">
+                    Зарегистрироваться
+                </button>
+            </div>
+        </div>
+    </form>
+
+    {% for msg in messages %}
+        <div class="alert alert-danger">{{ msg }}</div>
+    {% endfor %}
+</div>
+</body>
