@@ -47,14 +47,13 @@ class RegistrationView(FormView):
         return super(RegistrationView, self).get(request, *args, **kwargs)
 
     def get_success_url(self):
-        next = '/login/?next=' + self.request.GET.get('next')
+        next = self.request.GET.get('next')
         if next:
-            return next
+            return '/login/?next=' + next
         return '/home'
 
     def form_valid(self, form):
         form_data = form.cleaned_data
-        print "form_data['request_id']: ", form_data['request_id']
         if form_data['request_id'] == 0:
             messages.add_message(self.request, messages.ERROR,
                                  u"А вы кто? Если вас нет в списке, обратитесь к администратору")
