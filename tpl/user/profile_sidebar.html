@@ -25,6 +25,12 @@
         {% block user_achievments %}
             <li><a href="/user/achievments/"><i class="glyphicon glyphicon-star-empty"></i>Достижения </a></li>
         {% endblock %}
+        {% block user_enter_survey %}
+            {% if request.user.is_staff %}
+                <li><a href="{% url 'user:enter_survey:report-admin' slug='enter_survey' %}"><i class="glyphicon glyphicon-list-alt"></i>Результат входного тестирования[подробно]</a></li>
+            {% endif %}
+            <li><a href="{% url 'user:enter_survey:report' %}"><i class="glyphicon glyphicon-list-alt"></i>Результат входного тестирования</a></li>
+        {% endblock %}
         <li><a href="/logout"><i class="glyphicon glyphicon-off"></i>Выйти </a></li>
     </ul>
 </div>

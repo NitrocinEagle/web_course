@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^achievments/$', AchievmentsView.as_view()),
     url(r'^settings/$', UserSettingsView.as_view()),
     url(r'^tasks/', include('app.user.tasks.urls')),
-    url(r'^enter-survey/', include('app.user.enter_survey.urls', namespace="enter_survey")),
+    url(r'^enter_survey/', include('app.user.enter_survey.urls', namespace="enter_survey")),
 ]

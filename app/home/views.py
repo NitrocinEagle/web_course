@@ -84,10 +84,14 @@ class RegistrationView(FormView):
 
 
 class HomeCourseView(FormView):
-    template_name = 'home/index.html'
     news_view_count = 2
     form_class = RequestForm
     success_url = '/thanks'
+
+    def get_template_names(self):
+        if self.request.user.is_authenticated():
+            return 'home/home.html'
+        return 'home/index.html'
 
     def get_context_data(self, **kwargs):
         kwargs['news'] = News.objects.all()[:self.news_view_count]
