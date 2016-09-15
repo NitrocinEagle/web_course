@@ -22,6 +22,11 @@ class EnterSurveyView(SurveyView):
 class EnterSurveyReportView(TemplateView):
     template_name = 'user/enter_survey_report.html'
 
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated():
+            return HttpResponseRedirect('/login/?next=/user/enter_survey/enter_survey/report/')
+        return super(EnterSurveyReportView, self).get(request, *args, **kwargs)
+
     def get_survey_responses(self):
         with connection.cursor() as cursor:
             cursor.execute(
