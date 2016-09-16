@@ -43,14 +43,13 @@ WHERE answ_trans.title != '1'ORDER BY resp.user_id;''')
         return row
 
     def get_context_data(self, **kwargs):
-        right_responses = [(2, 5), (3, 9), (3, 9), (4, 12), (4, 13), (5, 17), (6, 20), (6, 22),
-                           (7, 25), (7, 27), (8, 28), (8, 29), (8, 31), (9, 33), (9, 33), (11, 38), (12, 41)
+        right_responses = [(2, 5), (3, 9), (4, 12), (4, 13), (5, 17), (6, 20), (6, 22),
+                           (7, 25), (7, 27), (8, 28), (8, 29), (8, 31), (9, 33), (11, 38), (12, 41)
                            ]
         responses = []
-        extra_strange_answers = [u'система управления версиями', ]
+        extra_strange_answers = [u'система управления версиями', u'программой для редактирования текста',]
         extra_strange_questions = [u'Базовым стеком протоколов интернет является', u'Кто такой Дима?']
         total_score = 0
-        max_score = 17
         for r in self.get_survey_responses():
             if r[5] in extra_strange_answers or r[4] in extra_strange_questions:
                 continue
@@ -61,7 +60,7 @@ WHERE answ_trans.title != '1'ORDER BY resp.user_id;''')
             if r[0] == self.request.user.id and point:
                 total_score += 1
         kwargs['responses'] = responses
-        kwargs['max_score'] = max_score
+        kwargs['max_score'] = len(right_responses)
         kwargs['total_score'] = total_score
         return super(EnterSurveyReportView, self).get_context_data(**kwargs)
 
@@ -90,8 +89,8 @@ WHERE answ_trans.title != '1'ORDER BY resp.user_id;''')
         return row
 
     def get_context_data(self, **kwargs):
-        right_responses = [(2, 5), (3, 9), (3, 9), (4, 12), (4, 13), (5, 17), (6, 20), (6, 22),
-                           (7, 25), (7, 27), (8, 28), (8, 29), (8, 31), (9, 33), (9, 33), (11, 38), (12, 41)
+        right_responses = [(2, 5), (3, 9), (4, 12), (4, 13), (5, 17), (6, 20), (6, 22),
+                           (7, 25), (7, 27), (8, 28), (8, 29), (8, 31), (9, 33), (11, 38), (12, 41)
                            ]
         responses = []
         users_id = {}
@@ -101,7 +100,6 @@ WHERE answ_trans.title != '1'ORDER BY resp.user_id;''')
         extra_strange_answers = [u'система управления версиями', ]
         extra_strange_questions = [u'Базовым стеком протоколов интернет является', ]
 
-        max_score = 17
         for r in self.get_survey_responses():
             if r[5] in extra_strange_answers or r[4] in extra_strange_questions:
                 continue
@@ -130,5 +128,5 @@ WHERE answ_trans.title != '1'ORDER BY resp.user_id;''')
             r['data']['total_score'] = users_total_scores[str(r['id'])]
 
         kwargs['responses'] = sorted(responses, key=lambda resp: (-resp['data']['total_score']))
-        kwargs['max_score'] = max_score
+        kwargs['max_score'] = len(right_responses)
         return super(EnterSurveyReportAdminView, self).get_context_data(**kwargs)
