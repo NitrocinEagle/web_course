@@ -5,7 +5,7 @@ from django import forms
 
 def get_requests_choices():
     requests = [(0, u'-------')]
-    [requests.append((req.id, req)) for req in Request.objects.all()]
+    [requests.append((req.id, req)) for req in Request.objects.all().order_by(name)]
     return requests
 
 
