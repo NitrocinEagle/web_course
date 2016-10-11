@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^about/', include('app.about.urls')),
     url(r'^news/', include('app.news.urls')),
     url(r'^timetable/', include('app.timetable.urls')),
+    url(r'^library/', include('app.library.urls')),
     url(r'^user/', include('app.user.urls', namespace='user')),
     url(r'^lectures/', include('app.lectures.urls')),
     url(r'^pos/', include('generic_positions.urls')),

@@ -16,6 +16,7 @@ INSTALLED_APPS = (
     'app.timetable',
     'app.requests',
     'app.faq',
+    'app.library',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

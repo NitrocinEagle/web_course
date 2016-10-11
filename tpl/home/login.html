@@ -8,12 +8,16 @@
 </head>
 <body>
 <div class="container">
+    {% for msg in messages %}
+        <div class="alert alert-danger">{{ msg }}</div>
+    {% endfor %}
     <form class="form-signin" action="" method="post">
         {% csrf_token %}
-        {{ form.next }}
+        {#        {{ form.next }}#}
         <h2 class="form-signin-heading">Авторизация</h2>
-        <input autofocus="autofocus" type="text" class="form-control" required="" placeholder="Имя пользователя" name="username">
-        <input class="form-control" placeholder="Пароль" name="password" type="password" >
+        <input autofocus="autofocus" type="text" class="form-control" required="" placeholder="Имя пользователя"
+               name="username">
+        <input class="form-control" placeholder="Пароль" name="password" type="password">
         <label class="checkbox">
             <input value="remember-me" type="checkbox"> Запомнить
         </label>

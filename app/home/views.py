@@ -28,7 +28,9 @@ class LoginFormView(FormView):
     def form_valid(self, form):
         self.user = form.get_user()
         login(self.request, self.user)
-        return super(LoginFormView, self).form_valid(form)
+        if self.request.user.is_authenticated:
+            return super(LoginFormView, self).form_valid(form)
+        return super(LoginFormView, self).form_invalid(form)
 
 
 class LogoutView(View):
@@ -42,7 +44,7 @@ class RegistrationView(FormView):
     template_name = "home/registration.html"
 
     def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             return HttpResponseRedirect("/home")
         return super(RegistrationView, self).get(request, *args, **kwargs)
 
