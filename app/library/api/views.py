@@ -44,26 +44,28 @@ class SetBook(APIView):
                 'result': 'error',
                 'code': 3
             })
-        book = self.request.data
+        request_data = self.request.data
+
         try:
-            book = Book.objects.filter(id=book.get('id'))
-            if book:
-                book.update(**book)
-                return Response({
-                    'result': 'success',
-                    'code': 101,
-                    'message': u'Book with id %s has been updated' % (book['id'])
-                })
-            else:
-                new_book = Book(**book).save()
-                return Response({
-                    'result': 'success',
-                    'code': 102,
-                    'message': u'Book with id %s has been created' % (new_book.id),
-                    'data': {
-                        'id': new_book.id
-                    }
-                })
+            if request_data.get('id'):
+                book = Book.objects.filter(id=request_data.get('id'))
+                if book:
+                    book.update(**request_data)
+                    return Response({
+                        'result': 'success',
+                        'code': 101,
+                        'message': u'Book with id %s has been updated' % (request_data.get('id'))
+                    })
+            Book(**book).save()
+            new_book = Book.objects.filter(**book).last()
+            return Response({
+                'result': 'success',
+                'code': 102,
+                'message': u'Book with id %s has been created' % (new_book.id),
+                'data': {
+                    'id': new_book.id
+                }
+            })
         except:
             return Response({
                 'result': 'error',
@@ -82,13 +84,13 @@ class DeleteBook(APIView):
             })
         book = self.request.data
         try:
-            Book.objects.filter(id=book.get['id']).delete()
+            Book.objects.filter(id=book.get('id')).delete()
             return Response({
                 'result': 'success',
                 'code': 104,
-                'message': u'Book with id %s has been deleted' % (book.get['id']),
+                'message': u'Book with id %s has been deleted' % (book.get('id')),
                 'data': {
-                    'id': book.get['id']
+                    'id': book.get('id')
                 }
             })
         except:
