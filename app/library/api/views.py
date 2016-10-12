@@ -46,20 +46,23 @@ class SetBook(APIView):
             })
         book = self.request.data
         try:
-            book = Book.objects.filter(id=book['id'])
+            book = Book.objects.filter(id=book.get('id'))
             if book:
                 book.update(**book)
                 return Response({
                     'result': 'success',
                     'code': 101,
-                    'message': u'Book with id % has been updated' % (book['id'])
+                    'message': u'Book with id %s has been updated' % (book['id'])
                 })
             else:
                 new_book = Book(**book).save()
                 return Response({
                     'result': 'success',
                     'code': 102,
-                    'message': u'Book with id % has been created' % (new_book.id)
+                    'message': u'Book with id %s has been created' % (new_book.id),
+                    'data': {
+                        'id': new_book.id
+                    }
                 })
         except:
             return Response({
@@ -79,10 +82,14 @@ class DeleteBook(APIView):
             })
         book = self.request.data
         try:
-            Book.objects.filter(id=book['id']).delete()
+            Book.objects.filter(id=book.get['id']).delete()
             return Response({
                 'result': 'success',
-                'code': 104
+                'code': 104,
+                'message': u'Book with id %s has been deleted' % (book.get['id']),
+                'data': {
+                    'id': book.get['id']
+                }
             })
         except:
             return Response({
