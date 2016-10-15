@@ -3,6 +3,8 @@ from __future__ import absolute_import
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from ..models import Book, LibraryAPISetting
+import traceback
+
 
 
 class SelectBooks(APIView):
@@ -16,10 +18,11 @@ class SelectBooks(APIView):
             })
         try:
             books = Book.objects.all()
-        except:
+        except Exception:
             return Response({
                 'result': 'error',
-                'code': 1
+                'code': 1,
+                'traceback': traceback.format_exc()
             })
         books_response = []
         for book in books:
@@ -56,8 +59,8 @@ class SetBook(APIView):
                         'code': 101,
                         'message': u'Book with id %s has been updated' % (request_data.get('id'))
                     })
-            Book(**book).save()
-            new_book = Book.objects.filter(**book).last()
+            Book(**request_data).save()
+            new_book = Book.objects.filter(**request_data).last()
             return Response({
                 'result': 'success',
                 'code': 102,
@@ -66,10 +69,11 @@ class SetBook(APIView):
                     'id': new_book.id
                 }
             })
-        except:
+        except Exception:
             return Response({
                 'result': 'error',
-                'code': 103
+                'code': 103,
+                'traceback': traceback.format_exc()
             })
 
 
@@ -96,5 +100,6 @@ class DeleteBook(APIView):
         except:
             return Response({
                 'result': 'error',
-                'code': 105
+                'code': 105,
+                'traceback': traceback.format_exc()
             })
