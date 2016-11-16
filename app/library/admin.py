@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
-from models import Book, BookMark, LibraryAPISetting
 from django.contrib import admin
+from .models import Book, BookMark, LibraryAPISetting
 
 admin.site.register(Book)
 admin.site.register(LibraryAPISetting)

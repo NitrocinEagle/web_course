@@ -1,10 +1,11 @@
 # -*- coding: utf8 -*-
 from __future__ import absolute_import
+
+import traceback
+
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from ..models import Book, LibraryAPISetting
-import traceback
-
 
 
 class SelectBooks(APIView):

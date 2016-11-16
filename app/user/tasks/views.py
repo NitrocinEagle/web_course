@@ -1,10 +1,10 @@
 # -*- coding: utf8 -*-
 import os
-from django.views.generic import ListView, FormView
-from django.contrib import messages
 from app.user.views import UserViewBase, UserProfile
-from models import Task, TaskAnswer
-from forms import NameForm
+from django.contrib import messages
+from django.views.generic import ListView, FormView
+from .forms import NameForm
+from .models import Task, TaskAnswer
 
 
 class TasksView(UserViewBase):

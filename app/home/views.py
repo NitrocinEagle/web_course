@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect
 from django.utils.timezone import now
 from django.views.generic import FormView, TemplateView
 from django.views.generic.base import View
-from forms import RegistrationForm
+from .forms import RegistrationForm
 
 
 class LoginFormView(FormView):

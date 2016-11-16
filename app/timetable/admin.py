@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-from models import Event
 from django.contrib import admin
+from .models import Event
 
 admin.site.register(Event)

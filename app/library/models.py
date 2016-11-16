@@ -1,28 +1,28 @@
 # -*- coding: utf8 -*-
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class Book(models.Model):
-    title = models.CharField(verbose_name=u'Название книги', max_length=128)
-    author = models.CharField(verbose_name=u'Автор', max_length=128)
-    price = models.FloatField(verbose_name=u'Цена')
+    title = models.CharField(verbose_name='Название книги', max_length=128)
+    author = models.CharField(verbose_name='Автор', max_length=128)
+    price = models.FloatField(verbose_name='Цена')
     description = models.TextField(blank=True)
 
-    def __unicode__(self):
-        return u'%s' % self.title
+    def __str__(self):
+        return '%s' % self.title
 
 
 class LibraryAPISetting(models.Model):
-    get_allowed = models.BooleanField(verbose_name=u'Разрешены get-методы', default=True)
-    post_allowed = models.BooleanField(verbose_name=u'Разрешены post-методы', default=True)
+    get_allowed = models.BooleanField(verbose_name='Разрешены get-методы', default=True)
+    post_allowed = models.BooleanField(verbose_name='Разрешены post-методы', default=True)
 
 
 class BookMark(models.Model):
-	title = models.CharField(verbose_name=u'Название закладки', max_length=128)
-	book_id = models.ManyToOneRel(Book, verbose_name=u'Книга', max_length=128)
-	user_id = models.ManyToOneRel(User, verbose_name=u'Пользователь', max_length=128)
-	comment = models.TextField(verbose_name=u'Комментарий', blank=True)
+    title = models.CharField(verbose_name='Название закладки', max_length=128)
+    book_id = models.ForeignKey(Book, verbose_name='Книга')
+    user_id = models.ForeignKey(User, verbose_name='Пользователь')
+    comment = models.TextField(verbose_name='Комментарий', blank=True)
 
-	def __unicode__(self):
-        return u'%s' % self.title
+    def __str__(self):
+        return '%s' % self.title

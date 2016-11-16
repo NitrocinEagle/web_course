@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 from django.views.generic import ListView, TemplateView
-from models import Lecture
+from .models import Lecture
 
 
 class LecturesView(ListView):

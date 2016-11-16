@@ -1,6 +1,6 @@
-from models import UserProfile
+from app.user.tasks.models import Task, TaskAnswer
 from django.contrib import admin
-from tasks.models import Task, TaskAnswer
+from .models import UserProfile
 
 admin.site.register(UserProfile)
 admin.site.register(Task)

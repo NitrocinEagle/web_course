@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-from models import FAQ
 from django.contrib import admin
+from .models import FAQ
 
 admin.site.register(FAQ)

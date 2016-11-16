@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 from django.views.generic import TemplateView
-from models import UserProfile
+from .models import UserProfile
 
 
 class UserViewBase(TemplateView):

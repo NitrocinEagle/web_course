@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-from models import Lecture
 from django.contrib import admin
+from .models import Lecture
 
 admin.site.register(Lecture)
